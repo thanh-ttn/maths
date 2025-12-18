@@ -1,6 +1,7 @@
 ---
 title: "How To Prove It - exercises"
 format: html
+mathfontoptions: mathjax
 number-sections: true
 number-depth: 3
 toc: true
