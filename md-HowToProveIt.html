@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>How To Prove It - exercises</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="md-HowToProveIt_files/libs/clipboard/clipboard.min.js"></script>
+<script src="md-HowToProveIt_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="md-HowToProveIt_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="md-HowToProveIt_files/libs/quarto-html/popper.min.js"></script>
+<script src="md-HowToProveIt_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="md-HowToProveIt_files/libs/quarto-html/anchor.min.js"></script>
+<link href="md-HowToProveIt_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="md-HowToProveIt_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="md-HowToProveIt_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="md-HowToProveIt_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="md-HowToProveIt_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#sentential-logic" id="toc-sentential-logic" class="nav-link" data-scroll-target="#sentential-logic"><span class="header-section-number">1</span> Sentential Logic</a>
+  <ul>
+  <li><a href="#1.1" id="toc-1.1" class="nav-link" data-scroll-target="#1.1"><span class="header-section-number">1.1</span> Deductive Reasoning and Logical Connectives</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">1.</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2.</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">3.</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">4.</a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">5.</a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">6.</a></li>
+  <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6">7.</a></li>
+  <li><a href="#section-7" id="toc-section-7" class="nav-link" data-scroll-target="#section-7">8.</a></li>
+  <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8">9.</a></li>
+  </ul></li>
+  <li><a href="#truth-tables" id="toc-truth-tables" class="nav-link" data-scroll-target="#truth-tables"><span class="header-section-number">1.2</span> Truth Tables</a>
+  <ul class="collapse">
+  <li><a href="#section-9" id="toc-section-9" class="nav-link" data-scroll-target="#section-9">1.</a></li>
+  <li><a href="#section-10" id="toc-section-10" class="nav-link" data-scroll-target="#section-10">2.</a></li>
+  <li><a href="#section-11" id="toc-section-11" class="nav-link" data-scroll-target="#section-11">3.</a></li>
+  <li><a href="#section-12" id="toc-section-12" class="nav-link" data-scroll-target="#section-12">4.</a></li>
+  <li><a href="#section-13" id="toc-section-13" class="nav-link" data-scroll-target="#section-13">5.</a></li>
+  <li><a href="#section-14" id="toc-section-14" class="nav-link" data-scroll-target="#section-14">6.</a></li>
+  <li><a href="#section-15" id="toc-section-15" class="nav-link" data-scroll-target="#section-15">7.</a></li>
+  <li><a href="#section-16" id="toc-section-16" class="nav-link" data-scroll-target="#section-16">9.</a></li>
+  <li><a href="#section-17" id="toc-section-17" class="nav-link" data-scroll-target="#section-17">12.</a></li>
+  </ul></li>
+  <li><a href="#variables-and-sets" id="toc-variables-and-sets" class="nav-link" data-scroll-target="#variables-and-sets"><span class="header-section-number">1.3</span> Variables and Sets</a>
+  <ul class="collapse">
+  <li><a href="#section-18" id="toc-section-18" class="nav-link" data-scroll-target="#section-18">1.</a></li>
+  <li><a href="#section-19" id="toc-section-19" class="nav-link" data-scroll-target="#section-19">2.</a></li>
+  <li><a href="#section-20" id="toc-section-20" class="nav-link" data-scroll-target="#section-20">4.</a></li>
+  <li><a href="#section-21" id="toc-section-21" class="nav-link" data-scroll-target="#section-21">5.</a></li>
+  <li><a href="#section-22" id="toc-section-22" class="nav-link" data-scroll-target="#section-22">6.</a></li>
+  <li><a href="#section-23" id="toc-section-23" class="nav-link" data-scroll-target="#section-23">7.</a></li>
+  <li><a href="#section-24" id="toc-section-24" class="nav-link" data-scroll-target="#section-24">9.</a></li>
+  </ul></li>
+  <li><a href="#operations-on-sets" id="toc-operations-on-sets" class="nav-link" data-scroll-target="#operations-on-sets"><span class="header-section-number">1.4</span> Operations on Sets</a>
+  <ul class="collapse">
+  <li><a href="#exercise4.6" id="toc-exercise4.6" class="nav-link" data-scroll-target="#exercise4.6">6.</a></li>
+  <li><a href="#section-25" id="toc-section-25" class="nav-link" data-scroll-target="#section-25">7.</a></li>
+  <li><a href="#section-26" id="toc-section-26" class="nav-link" data-scroll-target="#section-26">9.</a></li>
+  <li><a href="#section-27" id="toc-section-27" class="nav-link" data-scroll-target="#section-27">10.</a></li>
+  <li><a href="#section-28" id="toc-section-28" class="nav-link" data-scroll-target="#section-28">11.</a></li>
+  <li><a href="#section-29" id="toc-section-29" class="nav-link" data-scroll-target="#section-29">15.</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">How To Prove It - exercises</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
+</section>
+<section id="sentential-logic" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="sentential-logic"><span class="header-section-number">1</span> Sentential Logic</h2>
+<section id="1.1" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="1.1"><span class="header-section-number">1.1</span> Deductive Reasoning and Logical Connectives</h3>
+<section id="section" class="level4">
+<h4 class="anchored" data-anchor-id="section">1.</h4>
+<ol type="a">
+<li><p>We’ll have either a reading assignment or homework problems, but we won’t have both homework problems and a test.</p>
+<ul>
+<li>R: We’ll have a reading assignment.</li>
+<li>P: We’ll have homework problems.</li>
+<li>T: We’ll have a test.</li>
+</ul>
+<p><span class="math inline">\((R \lor P) \land (\neg P \lor \neg T)\)</span> or <span class="math inline">\(\neg(P \land T)\)</span>.</p></li>
+<li><p>You won’t go skiing, or you will and there won’t be any snow.</p>
+<ul>
+<li>SK: You’ll go skiing.</li>
+<li>SN: There will be snow.</li>
+</ul>
+<p><span class="math inline">\(\neg SK \lor (SK \land \neg SN)\)</span>.</p></li>
+<li><p><span class="math inline">\(\sqrt{7} \not\leq 2\)</span>.</p>
+<p><span class="math inline">\(\neg((\sqrt{7} &lt; 2) \lor (\sqrt{7} = 2))\)</span>.</p></li>
+</ol>
+</section>
+<section id="section-1" class="level4">
+<h4 class="anchored" data-anchor-id="section-1">2.</h4>
+<ol type="a">
+<li><p>Either John and Bill are both telling the truth, or neither of them is.</p>
+<ul>
+<li>J: John is telling the truth.</li>
+<li>B: Bill is telling the truth.</li>
+</ul>
+<p><span class="math inline">\((J \land B) \lor (\neg J \land \neg B)\)</span> or <span class="math inline">\(\neg(P \lor T)\)</span>.</p></li>
+<li><p>I’ll have either fish or chicken, but I won’t have both fish and mashed potatoes.</p>
+<ul>
+<li>F: I’ll have fish.</li>
+<li>C: I’ll have chicken.</li>
+<li>P: I’ll have mashed potatoes.</li>
+</ul>
+<p><span class="math inline">\((F \lor C) \land \neg (F \land P)\)</span>.</p></li>
+<li><p>3 is a common divisor of 6, 9, and 15.</p>
+<p><span class="math inline">\((3 \mid 6) \land (3 \mid 9) \land (3 \mid 15)\)</span>.</p></li>
+</ol>
+</section>
+<section id="section-2" class="level4">
+<h4 class="anchored" data-anchor-id="section-2">3.</h4>
+<ul>
+<li>A: Alice is in the room.</li>
+<li>B: Bob is in the room.</li>
+</ul>
+<ol type="a">
+<li>Alice and Bob are not both in the room. <span class="math inline">\(\neg A \lor \neg B\)</span></li>
+<li>Alice and Bob are both not in the room. <span class="math inline">\(\neg A \land \neg B\)</span></li>
+<li>Either Alice or Bob is not in the room. <span class="math inline">\(\neg A \lor \neg B\)</span></li>
+<li>Neither Alice nor Bob is in the room. <span class="math inline">\(\neg A \land \neg B\)</span></li>
+</ol>
+</section>
+<section id="section-3" class="level4">
+<h4 class="anchored" data-anchor-id="section-3">4.</h4>
+<ul>
+<li>RT: Ralph is tall.</li>
+<li>ET: Ed is tall.</li>
+<li>RH: Raph is handsome.</li>
+<li>EH: Ed is handsome.</li>
+</ul>
+<ol type="a">
+<li><p>Either both Ralph and Ed are tall, or both of them are handsome. <span class="math inline">\((RT \land ET) \lor (RH \land EH)\)</span>.</p></li>
+<li><p>Both Ralph and Ed are either tall or handsome. <span class="math inline">\((RT \lor RH) \land (ET \lor EH)\)</span>.</p></li>
+<li><p>Both Ralph and Ed are neither tall nor handsome. <span class="math inline">\(\neg((RT \lor RH) \land (ET \lor EH))\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
+<li><p>Neither Ralph nor Ed is both tall and handsome. <span class="math inline">\(\neg((RT \land RH) \lor (ET \land EH))\)</span>.</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Not both A and B = Not A or Not B.</li>
+<li>Neither A nor B = Not A and Not B.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="section-4" class="level4">
+<h4 class="anchored" data-anchor-id="section-4">5.</h4>
+<ol type="a">
+<li>¬(¬P ∨ ¬¬R). –&gt; This is a well-formed formula.</li>
+<li>¬(P, Q, ∧ R).</li>
+<li>P ∧ ¬ P. –&gt; This is a well-formed formula.</li>
+<li>(P ∧ Q)(P ∨ R).</li>
+</ol>
+</section>
+<section id="section-5" class="level4">
+<h4 class="anchored" data-anchor-id="section-5">6.</h4>
+<p>Let P stand for the statement “I will buy the pants” and S for the statement “I will buy the shirt.”</p>
+<ol type="a">
+<li><p>¬(P ∧ ¬S). Either I will not buy the pants, or I will buy the shirt.</p></li>
+<li><p>¬P ∧ ¬S. I will neither buy the pants nor buy the shirt.</p></li>
+<li><p>¬P ∨ ¬S. Either I will not buy the pants, or I will not buy the shirt. I will not buy both the pants and the shirt.</p></li>
+</ol>
+</section>
+<section id="section-6" class="level4">
+<h4 class="anchored" data-anchor-id="section-6">7.</h4>
+<p>Let S stand for the statement “Steve is happy” and G for “George is happy.” What English sentences are represented by the following formulas?</p>
+<ol type="a">
+<li><p>(S ∨ G) ∧ (¬ S ∨ ¬G). Either Steve is happy or George is happy, but they are not both happy.</p></li>
+<li><p>[S ∨ (G ∧ ¬S)] ∨ ¬G. There are three posibilities, (i) Steve is happy, or (ii) George is happy and Steve is not happy, or (iii) George is not happy.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p></li>
+<li><p>S ∨ [G ∧ (¬ S ∨ ¬G)]. Either Steve is happy, or George is happy but they are not both happy.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p></li>
+</ol>
+</section>
+<section id="section-7" class="level4">
+<h4 class="anchored" data-anchor-id="section-7">8.</h4>
+<p>Let T stand for the statement “Taxes will go up” and D for “The deficit will go up.” What English sentences are represented by the following formulas?</p>
+<ol type="a">
+<li><p>T ∨ D. Either taxes will go up or the deficit will go up.</p></li>
+<li><p>¬(T ∧ D) ∧ ¬(¬T ∧ ¬D). Taxes and deficit will not both go up, but either taxes will go up or deficit will go up.</p></li>
+<li><p>(T ∧ ¬ D)∨ (D ∧ ¬T). Either taxes will go up and deficit will not go up, or deficit will go up and taxes will not go up.</p></li>
+</ol>
+</section>
+<section id="section-8" class="level4">
+<h4 class="anchored" data-anchor-id="section-8">9.</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Valid Argument
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An argument is valid if the premises cannot all be true without the conclusion being true as well.</p>
+</div>
+</div>
+<ol type="a">
+<li><p>Jane and Pete won’t both win the math prize. Pete will win either the math prize or the chemistry prize. Jane will win the math prize Therefore, Pete will win the chemistry prize.</p>
+<ul>
+<li>JM: Jane will win the math prize.</li>
+<li>PM: Pete will win the math prize.</li>
+<li>JC: Jane will win the chemistry prize.</li>
+<li>PC: Pete will win the chemistry prize.
+<ul>
+<li><span class="math inline">\(\neg JM \lor \neg PM.\)</span></li>
+<li>$$ <span class="math inline">\(PM \lor PC.\)</span></li>
+<li><span class="math inline">\(JM.\)</span></li>
+<li>Therefore, <span class="math inline">\(PC\)</span>.</li>
+</ul></li>
+</ul>
+<p>This is a valid argument.</p></li>
+<li><p>The main course will be either beef or fish. The vegetable will be either peas or corn. We will not have both fish as a main course and corn as a vegetable. Therefore, we will not have both beef as a main course and peas as a vegetable.</p>
+<ul>
+<li><p>MB: The main course will be beef.</p></li>
+<li><p>MF: The main course will be fish.</p></li>
+<li><p>VP: The vegetable will be peas.</p></li>
+<li><p>VC: The vegetable will be corn.</p>
+<ul>
+<li><span class="math inline">\(MB \lor MF.\)</span></li>
+<li><span class="math inline">\(VP \lor VC.\)</span></li>
+<li><span class="math inline">\(\neg MF \lor \neg VC.\)</span></li>
+<li>Therefore, <span class="math inline">\(\neg MB \lor \neg VP.\)</span></li>
+</ul></li>
+</ul>
+<p>This is an invalid argument. Two conclusions: (1) <span class="math inline">\(MB \land (VP \lor VC).\)</span> and (2) <span class="math inline">\((MB \lor MF) \land VP.\)</span></p></li>
+<li><p>Either John or Bill is telling the truth. Either Sam or Bill is lying. Therefore, either John is telling the truth or Sam is lying.</p>
+<ul>
+<li><p>J: John is telling the truth.</p></li>
+<li><p>B: Bill is telling the truth.</p></li>
+<li><p>S: Sam is telling the truth.</p>
+<ul>
+<li><span class="math inline">\(J \lor B.\)</span></li>
+<li><span class="math inline">\(\neg S \lor \neg B.\)</span></li>
+<li>Therefore, <span class="math inline">\(J \lor \neg S\)</span>.</li>
+</ul></li>
+</ul>
+<p>This is an invalid argument. If $ J, then S$, or if <span class="math inline">\(B, then \neg S\)</span>.</p></li>
+<li><p>Either sales will go up and the boss will be happy, or expenses will go up and the boss won’t be happy. Therefore, sales and expenses will not both go up.</p>
+<ul>
+<li><p>S: Sales will go up.</p></li>
+<li><p>B: The boss will be happy.</p></li>
+<li><p>E: Expenses will go up.</p>
+<ul>
+<li><span class="math inline">\((S \land B) \lor (E \land \neg B)\)</span>.</li>
+<li>Therefore, <span class="math inline">\(\neg S \lor \neg E\)</span>. This is a valid argument. If <span class="math inline">\(S \land B\)</span>, then <span class="math inline">\(\neg E \land B\)</span> or not E or B, same for the latter , or if <span class="math inline">\(E \land \neg B\)</span>, then <span class="math inline">\(\neg S \land \neg B\)</span>.</li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="truth-tables" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="truth-tables"><span class="header-section-number">1.2</span> Truth Tables</h3>
+<section id="section-9" class="level4">
+<h4 class="anchored" data-anchor-id="section-9">1.</h4>
+<p>Make truth tables for the following formulas:</p>
+<ol type="a">
+<li><table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(P\)</span></th>
+<th><span class="math inline">\(Q\)</span></th>
+<th><span class="math inline">\(\neg P \lor Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>F <strong>T</strong></td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F <strong>F</strong></td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T <strong>T</strong></td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T <strong>T</strong></td>
+</tr>
+</tbody>
+</table></li>
+<li><table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(S\)</span></th>
+<th><span class="math inline">\(G\)</span></th>
+<th><span class="math inline">\((S \lor G) \land (\neg S \lor \neg G)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T <strong>F</strong> F F F</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>T <strong>T</strong> F T T</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T <strong>T</strong> T T F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F <strong>F</strong> T T T</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+</section>
+<section id="section-10" class="level4">
+<h4 class="anchored" data-anchor-id="section-10">2.</h4>
+<p>Make truth tables for the following formulas:</p>
+<ol type="a">
+<li><p>¬[P ∧ (Q ∨ ¬P)].</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>¬[P ∧ (Q ∨ ¬P)]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td><strong>F</strong> T T F</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td><strong>T</strong> F F F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td><strong>T</strong> F T T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td><strong>T</strong> F T T</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>(P ∨ Q) ∧ (¬ P ∨ R).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>R</th>
+<th>(P ∨ Q) ∧ (¬ P ∨ R)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T <strong>T</strong> F T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T <strong>F</strong> F F</td>
+</tr>
+<tr class="odd">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T <strong>T</strong> F T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>T <strong>F</strong> F F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T <strong>T</strong> T T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>T <strong>T</strong> T T</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F <strong>F</strong> T T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F <strong>F</strong> T T</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+</section>
+<section id="section-11" class="level4">
+<h4 class="anchored" data-anchor-id="section-11">3.</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exclusive Or
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the symbol <strong>+</strong> to mean <em>exclusive or</em>, <strong>P + Q</strong> means “<strong>P or Q, but not both</strong>.”</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>P + Q</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<p>In mathematics, or always means inclusive or, unless specified otherwise, so <strong>∨</strong> means <em>inclusive or</em>.</p>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>Find a formula using only the connectives ∧, ∨, and ¬ that is equivalent to P + Q. Justify your answer with a truth table.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 14%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>P + Q</th>
+<th>We need</th>
+<th>P ∨ Q</th>
+<th>¬ (P ∧ Q)</th>
+<th>(P ∨ Q) ∧ ¬ (P ∧ Q)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T ∧ F</td>
+<td>T</td>
+<td>F T</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T ∧ T</td>
+<td>T</td>
+<td>T F</td>
+<td>T</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T ∧ T</td>
+<td>T</td>
+<td>T F</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F ∧ T</td>
+<td>F</td>
+<td>T F</td>
+<td>F</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+</section>
+<section id="section-12" class="level4">
+<h4 class="anchored" data-anchor-id="section-12">4.</h4>
+<p>Find a formula using only the connectives ∧ and ¬ that is equivalent to P ∨ Q. Justify your answer with a truth table.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>P ∨ Q</th>
+<th>Not both false ¬(¬P ∧ ¬Q)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td><strong>T</strong> F F F</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td><strong>T</strong> F F T</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td><strong>T</strong> T F F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td><strong>F</strong> T T T</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="section-13" class="level4">
+<h4 class="anchored" data-anchor-id="section-13">5.</h4>
+<p>Some mathematicians use the symbol ↓ to mean nor. In other words, <strong>P ↓ Q</strong> means “<strong>neither P nor Q</strong>.”</p>
+<ol type="a">
+<li><p>Make a truth table for P ↓ Q.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>P ↓ Q equivalent to ¬P ∧ ¬Q</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<ol start="2" type="a">
+<li><p>Find a formula using only the connectives ∧, ∨, and ¬ that is equivalent to P ↓ Q.</p>
+<p>¬P ∧ ¬Q, equivalent to ¬(P ∨ Q).</p></li>
+<li><p>Find formulas using only the connective ↓ that are equivalent to ¬P, P ∨ Q, and P ∧ Q.</p>
+<ul>
+<li>¬P = ¬(P ∨ P) = P ↓ P.</li>
+<li>P ∨ Q = ¬(¬P ∧ ¬Q) = ¬(P ↓ Q) = (P ↓ Q) ↓ (P ↓ Q)</li>
+<li>P ∧ Q = ¬(¬P ∨ ¬Q) = ¬((P ↓ P) ∨ (Q ↓ Q)) = (P ↓ P) ↓ (Q ↓ Q).</li>
+</ul></li>
+</ol>
+</section>
+<section id="section-14" class="level4">
+<h4 class="anchored" data-anchor-id="section-14">6.</h4>
+<p>Some mathematicians write <strong>P | Q</strong> to mean “<strong>P and Q are not both true</strong>.” (This connective is called <em>nand</em>, and is used in the study of circuits in computer science.)</p>
+<p>(a) Make a truth table for P | Q.</p>
+<pre><code>+-------------+-------------+-----------------------+
+| P           | Q           | P \| Q, equivalent to |
+|             |             |                       |
+|             |             | ¬(P ∧ Q), ¬P ∨ ¬Q     |
++=============+=============+=======================+
+| T           | T           | F                     |
++-------------+-------------+-----------------------+
+| T           | F           | T                     |
++-------------+-------------+-----------------------+
+| F           | T           | T                     |
++-------------+-------------+-----------------------+
+| F           | F           | T                     |
++-------------+-------------+-----------------------+</code></pre>
+<p>(b) Find a formula using only the connectives ∧, ∨, and ¬ that is equivalent to P | Q.</p>
+<pre><code>¬(P ∧ Q), ¬P ∨ ¬Q.</code></pre>
+<p>(c) Find formulas using only the connective | that are equivalent to ¬P, P ∨ Q, and P ∧ Q.</p>
+<pre><code> ¬P = ¬(P ∧ P) = P \| P
+ 
+ P ∨ Q = ¬(¬P ∧ ¬Q) = ¬(P \| P ∧ Q \| Q) = (P \| P) \| (Q \| Q)
+ 
+ P ∧ Q = ¬(¬P ∨ ¬Q) = ¬(P \| Q) = (P \| Q) \| (P \| Q)
+ 
+ *test this with the truth table*</code></pre>
+</section>
+<section id="section-15" class="level4">
+<h4 class="anchored" data-anchor-id="section-15">7.</h4>
+<p>Use truth tables to determine whether or not the arguments in exercise 9 of Section 1.1 are valid.</p>
+<p><strong>An argument is valid if the premises cannot all be true without the conclusion being true as well.</strong></p>
+<ol type="a">
+<li>Jane and Pete won’t both win the math prize. Pete will win either the math prize or the chemistry prize. Jane will win the math prize. Therefore, Pete will win the chemistry prize.</li>
+</ol>
+<ul>
+<li><p>JM: Jane will win the math prize.</p></li>
+<li><p>PM: Pete will win the math prize.</p></li>
+<li><p>JC: Jane will win the chemistry prize.</p></li>
+<li><p>PC: Pete will win the chemistry prize.</p>
+<ul>
+<li><span class="math inline">\(\neg JM \lor \neg PM.\)</span></li>
+<li><span class="math inline">\(PM \lor PC.\)</span></li>
+<li><span class="math inline">\(JM.\)</span></li>
+<li><span class="math inline">\(\therefore PC\)</span>.</li>
+</ul>
+<p>This is a valid argument.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 21%">
+<col style="width: 14%">
+<col style="width: 12%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>JM</th>
+<th>PM</th>
+<th>JC</th>
+<th>PC</th>
+<th>¬JM ∨ ¬PM</th>
+<th>PM ∨ PC</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>T</strong></td>
+<td>T</td>
+<td>T</td>
+<td><u>T</u></td>
+<td><strong>F</strong></td>
+<td><strong>T</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>T</strong></td>
+<td>T</td>
+<td>T</td>
+<td><u>F</u></td>
+<td><strong>F</strong></td>
+<td><strong>T</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>T</strong></td>
+<td>T</td>
+<td>F</td>
+<td><u>T</u></td>
+<td><strong>F</strong></td>
+<td><strong>T</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>T</strong></td>
+<td>T</td>
+<td>F</td>
+<td><u>F</u></td>
+<td><strong>F</strong></td>
+<td><strong>T</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>T</strong></td>
+<td>F</td>
+<td>T</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td>All true</td>
+</tr>
+<tr class="even">
+<td><strong>T</strong></td>
+<td>F</td>
+<td>F</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td>All true</td>
+</tr>
+<tr class="odd">
+<td><strong>T</strong></td>
+<td>F</td>
+<td>T</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>T</strong></td>
+<td>F</td>
+<td>F</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>F</strong></td>
+<td>T</td>
+<td>T</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>F</strong></td>
+<td>T</td>
+<td>T</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>F</strong></td>
+<td>T</td>
+<td>F</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>F</strong></td>
+<td>T</td>
+<td>F</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>F</strong></td>
+<td>F</td>
+<td>T</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>F</strong></td>
+<td>F</td>
+<td>F</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>F</strong></td>
+<td>F</td>
+<td>T</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>F</strong></td>
+<td>F</td>
+<td>F</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<ol start="2" type="a">
+<li>The main course will be either beef or fish. The vegetable will be either peas or corn. We will not have both fish as a main course and corn as a vegetable. Therefore, we will not have both beef as a main course and peas as a vegetable.</li>
+</ol>
+<ul>
+<li><p>MB: The main course will be beef.</p></li>
+<li><p>MF: The main course will be fish.</p></li>
+<li><p>VP: The vegetable will be peas.</p></li>
+<li><p>VC: The vegetable will be corn.</p>
+<ul>
+<li><span class="math inline">\(MB \lor MF.\)</span></li>
+<li><span class="math inline">\(VP \lor VC.\)</span></li>
+<li><span class="math inline">\(\neg MF \lor \neg VC.\)</span></li>
+<li>Therefore, <span class="math inline">\(\neg MB \lor \neg VP.\)</span></li>
+</ul>
+<p>This is an invalid argument.</p></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 15%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>MB</th>
+<th>MF</th>
+<th>VP</th>
+<th>VC</th>
+<th>MB ∨ MF</th>
+<th>VP ∨ VC</th>
+<th>¬MF ∨ ¬VC</th>
+<th>¬MB ∨ ¬VP</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td><u>F</u></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><u>F</u></td>
+<td>False conclusion</td>
+</tr>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td><u>T</u></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td><strong>T</strong></td>
+<td><u>T</u></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><u>F</u></td>
+<td>False conclusion</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><u>T</u></td>
+<td>All true</td>
+</tr>
+<tr class="odd">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><u>F</u></td>
+<td>False conclusion</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td><strong>T</strong></td>
+<td><u>T</u></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td><u>T</u></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><u>T</u></td>
+<td>All true</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td><u>T</u></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td><u>T</u></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td><u>F</u></td>
+<td><strong>T</strong></td>
+<td><strong>F</strong></td>
+<td><strong>T</strong></td>
+<td><u>T</u></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td><u>T</u></td>
+<td><strong>F</strong></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><u>T</u></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td><u>T</u></td>
+<td><strong>F</strong></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><u>T</u></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td><u>F</u></td>
+<td><strong>F</strong></td>
+<td><strong>T</strong></td>
+<td><strong>T</strong></td>
+<td><u>T</u></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td><u>F</u></td>
+<td><strong>F</strong></td>
+<td><strong>F</strong></td>
+<td><strong>T</strong></td>
+<td><u>T</u></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol start="3" type="a">
+<li><p>Either John or Bill is telling the truth. Either Sam or Bill is lying. Therefore, either John is telling the truth or Sam is lying.</p></li>
+<li><p>Either sales will go up and the boss will be happy, or expenses will go up and the boss won’t be happy. Therefore, sales and expenses will not both go up.</p></li>
+</ol>
+</section>
+<section id="section-16" class="level4">
+<h4 class="anchored" data-anchor-id="section-16">9.</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tautologies &amp; Contradictions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Formulas that are always true, such as P ∨ ¬P, are called tautologies.</p>
+<p>Similarly, formulas that are always false are called contradictions. For example, P ∧ ¬P is a contradiction.</p>
+</div>
+</div>
+<ol type="a">
+<li><p>(P ∨ Q) ∧ (¬ P ∨ ¬Q). Neither.</p></li>
+<li><p>(P ∨ Q) ∧ (¬ P ∧ ¬Q). Contradiction.</p></li>
+<li><p>(P ∨ Q) ∨ (¬ P ∨ ¬Q). Tautology.</p></li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 20%">
+<col style="width: 8%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>P ∨ Q</th>
+<th>¬ P ∨ ¬Q</th>
+<th>a. (P ∨ Q) ∧ (¬ P ∨ ¬Q)</th>
+<th>¬ P ∧ ¬Q</th>
+<th>b. (P ∨ Q) ∧ (¬ P ∧ ¬Q).</th>
+<th>c. (P ∨ Q) ∨ (¬ P ∨ ¬Q).</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="a">
+<li>[P ∧ (Q ∨ ¬R)] ∨ (¬P ∨ R). Tautology.</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>R</th>
+<th>[P ∧ (Q ∨ ¬R)] ∨ (¬P ∨ R)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T T <strong>T</strong> T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T T <strong>T</strong> F</td>
+</tr>
+<tr class="odd">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>F F <strong>T</strong> T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>T T <strong>T</strong> F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F T <strong>T</strong> T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>F T <strong>T</strong> T</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F F <strong>T</strong> T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F T <strong>T</strong> T</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="section-17" class="level4">
+<h4 class="anchored" data-anchor-id="section-17">12.</h4>
+<p>Use the laws stated in the text to find simpler formulas equivalent to these formulas. (See Examples 1.2.5 and 1.2.7.)</p>
+<ol type="a">
+<li></li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+&amp; \neg (\neg P \lor Q) \lor (P \land \neg R) \\
+&amp;= (\neg \neg P \land \neg Q) \lor (P \land \neg R) \text{ De Morgan}\\
+&amp;= (P \land \neg Q) \lor (P \land \neg R) \text{ double negative} \\
+&amp;= P  \land (\neg Q \lor \neg R) \text{ inverse of distributive} \\
+&amp;= P \land \neg(Q \land R) \text{ De Morgan} \\
+\end{align}
+\]</span></p>
+<ol start="2" type="a">
+<li></li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+&amp; \neg (\neg P \land Q) \lor (P \land \neg R) \\
+&amp;= (\neg \neg P \lor \neg Q) \lor (P \land \neg R) \text{ De Morgan}\\
+&amp;= (P \lor \neg Q) \lor (P \land \neg R) \text{ double negative} \\
+&amp;= P \lor (P \land \neg R) \lor \neg Q \text{ associative} \\
+&amp;= P  \lor \neg Q \text{ absorption} \\
+\end{align}
+\]</span></p>
+<ol start="3" type="a">
+<li></li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+&amp; (P \land R) \lor [\neg R\land (P \lor Q)] \\
+&amp;= (P \land R) \lor [(\neg R\land P) \lor (\neg R \land Q)] \text{ distributive}\\
+&amp;= (P \land R) \lor (\neg R\land P) \lor (\neg R \land Q) \text{ commutative}\\
+&amp;= (P \land (R \lor \neg R)) \lor (\neg R \land Q) \text{ distributive}\\
+&amp;= P \lor (\neg R \land Q) \text{ tautology}\\
+\end{align}
+\]</span></p>
+</section>
+</section>
+<section id="variables-and-sets" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="variables-and-sets"><span class="header-section-number">1.3</span> Variables and Sets</h3>
+<section id="section-18" class="level4">
+<h4 class="anchored" data-anchor-id="section-18">1.</h4>
+<p>Analyze the logical forms of the following statements:</p>
+<ol type="a">
+<li><p>3 is a common divisor of 6, 9, and 15. (Note: You did this in exercise 2 of Section 1.1, but you should be able to give a better answer now.)</p>
+<p>Let P(x) stand for “3 is a divisor of x”, then P(6) ∧ P(9) ∧ P(15).</p></li>
+<li><p>x is divisible by both 2 and 3 but not 4.</p>
+<p>Let P(x, y) stand for x is divisible by y, then P(x, 2) ∧ P(x, 3) ∧ ¬P(x, 4).</p></li>
+<li><p>x and y are natural numbers, and exactly one of them is prime.</p>
+<p>Let N(x) stand for x is a natural number, and P(x) stand for x is a prime number, then N(x) ∧ N(y) ∧ [(P(x) ∧ P(y)) ∨ (¬P(x) ∧ P(y))].</p></li>
+</ol>
+</section>
+<section id="section-19" class="level4">
+<h4 class="anchored" data-anchor-id="section-19">2.</h4>
+<p>Analyze the logical forms of the following statements:</p>
+<ol type="a">
+<li><p>x and y are men, and either x is taller than y or y is taller than x.</p>
+<p>Let M(x) stand for x is a men, T(x, y) stand for x is taller than y, then M(x) ∧ M(y) ∧ (T(x, y) V T(y, x)).</p></li>
+<li><p>Either x or y has brown eyes, and either x or y has red hair.</p>
+<p>Let E(x) stand for x has brown eyes and H(x) stand for x has red hair; then (E(x) V E(y)) ∧ (H(x) V H(y)).</p></li>
+<li><p>Either x or y has both brown eyes and red hair.</p>
+<p>Let E(x) stand for x has brown eyes and H(x) stand for x has red hair; then (E(x) ∧ H(x)) V (E(y) ∧ H(y)).</p></li>
+</ol>
+</section>
+<section id="section-20" class="level4">
+<h4 class="anchored" data-anchor-id="section-20">4.</h4>
+<p>Write definitions using elementhood tests for the following sets:</p>
+<ol type="a">
+<li><p>{1, 4, 9, 16, 25, 36, 49, …}. <span class="math inline">\(\{ x^2 \land x \in \mathbb{Z} \}\)</span>.</p></li>
+<li><p>{1, 2, 4, 8, 16, 32, 64, …}. <span class="math inline">\(\{ 2^x \land x \in \mathbb{N} \}\)</span>.</p></li>
+<li><p>{10, 11, 12, 13, 14, 15, 16, 17, 18, 19}.<span class="math inline">\(\{ x \in \mathbb{Z} | 10 \leq x \leq 19 \}\)</span></p></li>
+</ol>
+</section>
+<section id="section-21" class="level4">
+<h4 class="anchored" data-anchor-id="section-21">5.</h4>
+<p>Simplify the following statements. Which variables are free and which are bound? If the statement has no free variables, say whether it is true or false.</p>
+<ol type="a">
+<li><p>−3 ∈ {x ∈ R | 13 − 2x &gt; 1}. <span class="math inline">\(-3 \in \mathbb{R} \land 13 - 2(-3) &gt;1\)</span>. x is a bound variable. The statement has no free variable, and it is true.</p></li>
+<li><p>4 ∈ {x ∈ R− | 13 − 2x &gt; 1}. <span class="math inline">\(4 \in \mathbb{R-} \land 13-2\times 4 &gt; 1\)</span>. x is a bound variable. The statement has no free variable, and it is false.</p></li>
+<li><p>5 ∉ {x ∈ R | 13 − 2x &gt; c}. <span class="math inline">\(\neg(5 \in R \land 13 - 2 \times 5 &gt; c)\)</span>. x is a bound variable. c is a free variable.</p></li>
+</ol>
+</section>
+<section id="section-22" class="level4">
+<h4 class="anchored" data-anchor-id="section-22">6.</h4>
+<ol type="a">
+<li><p>w ∈ {x ∈ R | 13 − 2x &gt; c}. <span class="math inline">\(w \in \mathbb{R} \land 13 -2w &gt;c\)</span>. x is a bound variable, w and c are free variables.</p></li>
+<li><p>4 ∈ {x ∈ R | 13 − 2x ∈ {y | y is a prime number}}. (It might make this statement easier to read if we let P = {y | y is a prime number} using this notation, we could rewrite the statement as 4 ∈ {x ∈ R | 13 − 2x ∈ P}.). <span class="math inline">\(4 \in \mathbb{R} \land 13 - 2 \times 4 \text{ is a prime number}\)</span>. x and y are bound variables. There is no free variable. The statement is true.</p></li>
+<li><p>4 ∈ {x ∈ {y | y is a prime number} | 13 − 2x &gt; 1}. (Using the same notation as in part (b), we could write this as 4 ∈ {x ∈ P | 13 − 2x &gt; 1}.). <span class="math inline">\(4 \text{ is a prime number} \land 13-2 \times 4 &gt; 1\)</span>. x and y are bound variables. There is no free variable. The statement is false.</p></li>
+</ol>
+</section>
+<section id="section-23" class="level4">
+<h4 class="anchored" data-anchor-id="section-23">7.</h4>
+<p>List the elements of the following sets: <span class="math inline">\(2x^2 + x - 1 = 0\)</span> has two roots x = -1 and x = 1/2.</p>
+<ol type="a">
+<li>{x ∈ R | 2x^2 + x − 1 = 0}. {-1, 1/2}</li>
+<li>{x ∈ R+ | 2x^2 + x − 1 = 0}. {1/2}</li>
+<li>{x ∈ Z | 2x^2 + x − 1 = 0}. {-1}</li>
+<li>{x ∈ N | 2x^2 + x − 1 = 0}. {}</li>
+</ol>
+</section>
+<section id="section-24" class="level4">
+<h4 class="anchored" data-anchor-id="section-24">9.</h4>
+<p>What are the truth sets of the following statements? List a few elements of the truth set if you can.</p>
+<ol type="a">
+<li>x is a real number and x^2 − 4 x + 3 = 0. <span class="math inline">\(\{x \in \mathbb{R} | x^2 -4x + 3 = 0\}\)</span>, {1, 3}.</li>
+<li>x is a real number and x^2 − 2 x + 3 = 0. <span class="math inline">\(\{x \in \mathbb{R} | x^2 -2x + 3 = 0\}\)</span>, as <span class="math inline">\(x = \frac{2 \pm \sqrt{4-12}}{2}\)</span>, hence <span class="math inline">\(x \in \emptyset\)</span>.</li>
+<li>x is a real number and 5 ∈ {y ∈ R | x^2 + y^2 &lt; 50}. <span class="math inline">\(x \in \mathbb{R} | x^2 + 5^2 &lt; 50\)</span>, {-4, -1.2, 0, 3.9,…}.</li>
+</ol>
+</section>
+</section>
+<section id="operations-on-sets" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="operations-on-sets"><span class="header-section-number">1.4</span> Operations on Sets</h3>
+<section id="exercise4.6" class="level4">
+<h4 class="anchored" data-anchor-id="exercise4.6">6.</h4>
+<p>Venn diagram</p>
+<ol type="a">
+<li><span class="math inline">\((A ∪ B) \setminus&nbsp;C = (A &nbsp;\setminus C) ∪ (B \setminus&nbsp;C)\)</span>.</li>
+<li><span class="math inline">\(A ∪ (B \setminus&nbsp;C) = (A ∪ B) \setminus&nbsp;(C \setminus&nbsp;A)\)</span>.</li>
+</ol>
+</section>
+<section id="section-25" class="level4">
+<h4 class="anchored" data-anchor-id="section-25">7.</h4>
+<p>Verify the identities in exercise <span class="citation" data-cites="exercise4.6">@exercise4.6</span> by writing out (using logical symbols) what it means for an object x to be an element of each set and then using logical equivalences.</p>
+<ol type="a">
+<li></li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+&amp;x \in (A \cup B) \setminus C, \\
+&amp;(x \in A \lor x \in B) \land x \notin C, \\
+&amp;(x \in A \land x \notin C) \lor (x \in B \land x \notin C) \\
+\end{align}
+\]</span></p>
+<ol start="2" type="a">
+<li></li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+&amp;A ∪ (B \setminus&nbsp;C) = (A ∪ B) \setminus&nbsp;(C \setminus&nbsp;A) \\
+&amp;(x \in A) \lor (x \in B \land x \notin C) , \\
+&amp;(x \in A \lor x \in B) \land (x \in A \lor x \notin C), \\
+&amp;(x \in A \lor x \in B) \land \neg(x \notin A \land x \in C) \\
+\end{align}
+\]</span></p>
+</section>
+<section id="section-26" class="level4">
+<h4 class="anchored" data-anchor-id="section-26">9.</h4>
+<ol type="a">
+<li>(A&nbsp;\ B) \&nbsp;C.</li>
+</ol>
+<p><span class="math display">\[
+(x \in A \land x \notin B) \land x \notin C.
+\]</span></p>
+<ol start="2" type="a">
+<li>A \&nbsp;(B \&nbsp;C).</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+x \in A \land \neg (x \in B \land x \notin C) \\
+x \in A \land (x \notin B \lor x \in C)
+\end{align}
+\]</span></p>
+<ol start="3" type="a">
+<li>(A&nbsp;\ B) ∪ (A ∩ C).</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+(x \in A \land x \notin B) \lor (x \in A \land x \in C) \\
+x \in A \land (x \notin B \lor x \in C)
+\end{align}
+\]</span></p>
+<p>b and c are equivalent.</p>
+<ol start="4" type="a">
+<li>(A \&nbsp;B) ∩ (A \&nbsp;C).</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+(x \in A \land x \notin B) \land (x \in A \land x \notin C) \\
+x \in A \land (x \notin B \land x \notin C)
+\end{align}
+\]</span></p>
+<ol start="5" type="a">
+<li>A&nbsp;\ (B ∪ C).</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+x \in A \land \neg(x \in B \lor x \in C) \\
+x \in A \land (x \notin B \land x \notin C)
+\end{align}
+\]</span></p>
+<p>a, d and e are equivalent.</p>
+</section>
+<section id="section-27" class="level4">
+<h4 class="anchored" data-anchor-id="section-27">10.</h4>
+<p>It was shown on page 62 that for any sets A and B, (A ∪ B) \&nbsp;B ⊆ A. It is shown as follows:</p>
+<p><span class="math display">\[
+\begin{align}
+&amp;(A \cup B) \setminus B \subseteq A \\
+&amp;\text{We need to show if something is an element of } (A \cup B) \setminus B, \text{it is also an element of } A. \\
+&amp;\text{Suppose } x \in (A \cup B) \setminus B, \text {then } (x \in A \lor x \in B) \land x \notin B, \\
+&amp;\text{using distributive law of logical connectives, } (x \in A \land x \notin B) \lor (x \in B \land x \notin B), \\
+&amp;\text{the second part is a contradiction hence, the whole statement is equal to } x \in A \land x \notin B, \text{ so it is shown that } x \in A.\\
+&amp;\text{ so x is also an element of A, which means } (A \cup B) \setminus B \subseteq A
+\end{align}
+\]</span></p>
+<ol type="a">
+<li>Give an example of two sets A and B for which (A ∪ B) \&nbsp;B = A.</li>
+</ol>
+<p>This only happens if <span class="math inline">\(A \cup B = \emptyset\)</span>, in other words, A and B are disjoint. Or B is empty.</p>
+<ol start="2" type="a">
+<li>Show that for all sets A and B, (A ∪ B) \&nbsp;B = A \&nbsp;B.</li>
+</ol>
+<p><span class="math display">\[
+x \in A \land x \notin B \text{ which was shown above can be written with set operations as } x \in A \setminus B.
+\]</span></p>
+</section>
+<section id="section-28" class="level4">
+<h4 class="anchored" data-anchor-id="section-28">11.</h4>
+<p>Suppose A and B are sets. Is it necessarily true that (A \&nbsp;B) ∪ B = A? If not, is one of these sets necessarily a subset of the other?</p>
+<p><span class="math display">\[
+\begin{align}
+&amp;(x \in A \land x \notin B) \lor x \in B\\
+&amp;(x \in A \lor x \in B) \land (x \notin B \lor x \in B) \text{ distributive law,} \\
+&amp;\text{the second part is a tautology, then the statement is equivalent to } x \in A \lor x \in B \\
+&amp;\text{then } A \subseteq (A \setminus B) \cup B.
+\end{align}
+\]</span></p>
+<p>Is (A \&nbsp;B) ∪ B always equal to either A \&nbsp;B or A ∪ B?</p>
+<p><span class="math display">\[
+\begin{align}
+&amp;(A \setminus B) \cup (A \cup B), \\
+&amp;(x \in A \land x \notin B) \lor (x \in A \lor x \in B) \\
+&amp;\text{It is shown that }  (A \setminus B) \cup B = A \cup B, \\
+&amp;\text{so } (A \setminus B) \cup B \text{ is not equal to} (x \in A \land x \notin B).
+\end{align}
+\]</span></p>
+</section>
+<section id="section-29" class="level4">
+<h4 class="anchored" data-anchor-id="section-29">15.</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A symmetric difference between A and B <span class="math inline">\(A \triangle B\)</span> means,</p>
+<p><span class="math display">\[
+A \triangle B = (A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \cap B).
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="md-HowToProveIt_files/graph-symetric-difference-venn.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" width="186"></p>
+</figure>
+</div>
+<p>When A and B are disjoint, <span class="math inline">\((A \cap B) = \emptyset\)</span>, then <span class="math inline">\(A \triangle B = (A \cup B)\)</span>.</p>
+</div>
+</div>
+<p>Use any method you wish to verify the following identities:</p>
+<ol type="a">
+<li>Need to generalise 15, 16, 17<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+&amp;(A \triangle B) \cup C = (A \cup C) \triangle (B \setminus C). \\
+\\
+\text{LHS: }
+\text{Suppose } &amp;x \in (A \setminus B) \cup (B \setminus A) \cup C \\
+\\
+\text{RHS: }
+\text{Suppose } &amp;x \in (A \cup C) \setminus (B \setminus C) \lor x \in (B \setminus C) \setminus (A \cup C) \\
+&amp;(x \in (A \cup C) \land x \in (\neg B  \cup C))  \lor (x \in (B \setminus C) \land x \in (\neg A \cap \neg C)) \\
+&amp;x \in (C \cup (A \setminus B)) \lor x \in (\neg C \cup \neg A \cup B) ???
+\end{align}
+\]</span></p>
+<ol start="2" type="a">
+<li></li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+&amp;(A \triangle B) \cap C = (A \cap C) \triangle (B \cap C) \\
+\\
+\text{LHS: } &amp;(A\setminus B) \cup (B \setminus A) \cap C \\
+&amp; [(x \in A \land x \notin B) \lor (x \in B \land x \notin A)] \land x \in C \\
+\\
+\text{RHS}: &amp;((A \cap C) \setminus (B \cap C)) \cup ((B \cap C) \setminus (A\cap C)) \\
+&amp;((x \in A \land x \in C) \land (x \notin B \lor x \notin C)) \lor ((x  \in B \land x \in C) \land (x \notin A \lor x \notin C)) \\
+&amp;(x \in A \land x \in C \land x \notin B) \lor (x \in B \land x \in C \land x \notin A) \\
+&amp;(x \in C) \land [(x \in A \land x \notin B) \lor (x \in B \land x \notin A)]
+\end{align}
+\]</span></p>
+<ol start="3" type="a">
+<li></li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+&amp;(A \triangle B) \setminus C = (A \setminus C) \triangle (B \setminus C)\\
+\\
+\text{LHS: } &amp;[(A \setminus B) \cup (B \setminus A)] \setminus C \\
+&amp; [(x \in A \land x \notin B) \lor (x \in B \land x \notin A)] \land x \notin C \\
+\\
+\text{RHS: } &amp;[(A \setminus C) \setminus (B \setminus C)] \cup [(B \setminus C) \setminus (A \setminus C)] \\
+&amp;[(x \in A \land x \notin C)  \land (x \notin B \lor x \in C)] \lor
+[(x \in B \land x \notin C ) \land (x \notin A \lor x \in C)] \\
+&amp;(x \in A \land x \notin C \land x \notin B) \lor (x \in B \land x \notin C \land x \notin A) \\
+&amp;(x \notin C) \land [(x \in A \land x \notin B) \lor (x \in B \land x \notin A)]
+\end{align}
+\]</span></p>
+</section>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>need to check c and d<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>???<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Is this just (a)?<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>I could not work out question 15a<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
