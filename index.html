@@ -562,13 +562,13 @@ Exclusive Or
 <li><p>Find a formula using only the connectives ∧, ∨, and ¬ that is equivalent to P + Q. Justify your answer with a truth table.</p>
 <table class="caption-top table">
 <colgroup>
+<col style="width: 7%">
+<col style="width: 7%">
 <col style="width: 10%">
+<col style="width: 13%">
 <col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 11%">
-<col style="width: 10%">
-<col style="width: 14%">
-<col style="width: 25%">
+<col style="width: 16%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -626,12 +626,6 @@ Exclusive Or
 <h4 class="anchored" data-anchor-id="section-12">4.</h4>
 <p>Find a formula using only the connectives ∧ and ¬ that is equivalent to P ∨ Q. Justify your answer with a truth table.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 37%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>P</th>
@@ -674,11 +668,6 @@ Exclusive Or
 <ol type="a">
 <li><p>Make a truth table for P ↓ Q.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 41%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>P</th>
@@ -710,6 +699,7 @@ Exclusive Or
 </tbody>
 </table></li>
 </ol>
+<!-- -->
 <ol start="2" type="a">
 <li><p>Find a formula using only the connectives ∧, ∨, and ¬ that is equivalent to P ↓ Q.</p>
 <p>¬P ∧ ¬Q, equivalent to ¬(P ∨ Q).</p></li>
@@ -725,19 +715,37 @@ Exclusive Or
 <h4 class="anchored" data-anchor-id="section-14">6.</h4>
 <p>Some mathematicians write <strong>P | Q</strong> to mean “<strong>P and Q are not both true</strong>.” (This connective is called <em>nand</em>, and is used in the study of circuits in computer science.)</p>
 <p>(a) Make a truth table for P | Q.</p>
-<pre><code>+-------------+-------------+-----------------------+
-| P           | Q           | P \| Q, equivalent to |
-|             |             |                       |
-|             |             | ¬(P ∧ Q), ¬P ∨ ¬Q     |
-+=============+=============+=======================+
-| T           | T           | F                     |
-+-------------+-------------+-----------------------+
-| T           | F           | T                     |
-+-------------+-------------+-----------------------+
-| F           | T           | T                     |
-+-------------+-------------+-----------------------+
-| F           | F           | T                     |
-+-------------+-------------+-----------------------+</code></pre>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>P | Q equivalent to ¬(P ∧ Q), ¬P ∨ ¬Q</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
 <p>(b) Find a formula using only the connectives ∧, ∨, and ¬ that is equivalent to P | Q.</p>
 <pre><code>¬(P ∧ Q), ¬P ∨ ¬Q.</code></pre>
 <p>(c) Find formulas using only the connective | that are equivalent to ¬P, P ∨ Q, and P ∧ Q.</p>
@@ -769,15 +777,6 @@ Exclusive Or
 </ul>
 <p>This is a valid argument.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 21%">
-<col style="width: 14%">
-<col style="width: 12%">
-<col style="width: 13%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>JM</th>
@@ -955,15 +954,15 @@ Exclusive Or
 </ul>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 15%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 10%">
-<col style="width: 15%">
-<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1185,14 +1184,14 @@ Tautologies &amp; Contradictions
 </ol>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 8%">
-<col style="width: 20%">
-<col style="width: 8%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">

@@ -19,17 +19,17 @@ toc-location: right
 
 (a) We’ll have either a reading assignment or homework problems, but we won’t have both homework problems and a test.
 
-    * R: We’ll have a reading assignment.
-    * P: We’ll have homework problems.
-    * T: We’ll have a test.
-    
+    -   R: We’ll have a reading assignment.
+    -   P: We’ll have homework problems.
+    -   T: We’ll have a test.
+
     $(R \lor P) \land (\neg P \lor \neg T)$ or $\neg(P \land T)$.
 
 (b) You won’t go skiing, or you will and there won’t be any snow.
 
     -   SK: You'll go skiing.
     -   SN: There will be snow.
-    
+
     $\neg SK \lor (SK \land \neg SN)$.
 
 (c) $\sqrt{7} \not\leq 2$.
@@ -42,7 +42,7 @@ toc-location: right
 
     -   J: John is telling the truth.
     -   B: Bill is telling the truth.
-    
+
     $(J \land B) \lor (\neg J \land \neg B)$ or $\neg(P \lor T)$.
 
 (b) I’ll have either fish or chicken, but I won’t have both fish and mashed potatoes.
@@ -50,7 +50,7 @@ toc-location: right
     -   F: I'll have fish.
     -   C: I'll have chicken.
     -   P: I'll have mashed potatoes.
-    
+
     $(F \lor C) \land \neg (F \land P)$.
 
 (c) 3 is a common divisor of 6, 9, and 15.
@@ -78,9 +78,11 @@ toc-location: right
 
 (b) Both Ralph and Ed are either tall or handsome. $(RT \lor RH) \land (ET \lor EH)$.
 
-(c) Both Ralph and Ed are neither tall nor handsome. $\neg((RT \lor RH) \land (ET \lor EH))$.^[need to check c and d]
+(c) Both Ralph and Ed are neither tall nor handsome. $\neg((RT \lor RH) \land (ET \lor EH))$.[^1]
 
 (d) Neither Ralph nor Ed is both tall and handsome. $\neg((RT \land RH) \lor (ET \land EH))$.
+
+[^1]: need to check c and d
 
 ::: callout-note
 -   Not both A and B = Not A or Not B.
@@ -96,31 +98,35 @@ toc-location: right
 
 #### 6.
 
-Let P stand for the statement “I will buy the pants” and S for the statement “I will buy the shirt.” 
+Let P stand for the statement “I will buy the pants” and S for the statement “I will buy the shirt.”
 
-(a) ¬(P ∧ ¬S). Either I will not buy the pants, or I will buy the shirt. 
+(a) ¬(P ∧ ¬S). Either I will not buy the pants, or I will buy the shirt.
 
-(b) ¬P ∧ ¬S. I will neither buy the pants nor buy the shirt. 
+(b) ¬P ∧ ¬S. I will neither buy the pants nor buy the shirt.
 
 (c) ¬P ∨ ¬S. Either I will not buy the pants, or I will not buy the shirt. I will not buy both the pants and the shirt.
 
 #### 7.
 
-Let S stand for the statement “Steve is happy” and G for “George is happy.” What English sentences are represented by the following formulas? 
+Let S stand for the statement “Steve is happy” and G for “George is happy.” What English sentences are represented by the following formulas?
 
-(a) (S ∨ G) ∧ (¬ S ∨ ¬G). Either Steve is happy or George is happy, but they are not both happy. 
+(a) (S ∨ G) ∧ (¬ S ∨ ¬G). Either Steve is happy or George is happy, but they are not both happy.
 
-(b) \[S ∨ (G ∧ ¬S)\] ∨ ¬G. There are three posibilities, (i) Steve is happy, or (ii) George is happy and Steve is not happy, or (iii) George is not happy.^[???] 
+(b) \[S ∨ (G ∧ ¬S)\] ∨ ¬G. There are three posibilities, (i) Steve is happy, or (ii) George is happy and Steve is not happy, or (iii) George is not happy.[^2]
 
-(c) S ∨ \[G ∧ (¬ S ∨ ¬G)\]. Either Steve is happy, or George is happy but they are not both happy.^[Is this just (a)?]
+(c) S ∨ \[G ∧ (¬ S ∨ ¬G)\]. Either Steve is happy, or George is happy but they are not both happy.[^3]
+
+[^2]: ???
+
+[^3]: Is this just (a)?
 
 #### 8.
 
-Let T stand for the statement “Taxes will go up” and D for “The deficit will go up.” What English sentences are represented by the following formulas? 
+Let T stand for the statement “Taxes will go up” and D for “The deficit will go up.” What English sentences are represented by the following formulas?
 
-(a) T ∨ D. Either taxes will go up or the deficit will go up. 
+(a) T ∨ D. Either taxes will go up or the deficit will go up.
 
-(b) ¬(T ∧ D) ∧ ¬(¬T ∧ ¬D). Taxes and deficit will not both go up, but either taxes will go up or deficit will go up. 
+(b) ¬(T ∧ D) ∧ ¬(¬T ∧ ¬D). Taxes and deficit will not both go up, but either taxes will go up or deficit will go up.
 
 (c) (T ∧ ¬ D)∨ (D ∧ ¬T). Either taxes will go up and deficit will not go up, or deficit will go up and taxes will not go up.
 
@@ -128,6 +134,7 @@ Let T stand for the statement “Taxes will go up” and D for “The deficit wi
 
 ::: callout-note
 ## Valid Argument
+
 An argument is valid if the premises cannot all be true without the conclusion being true as well.
 :::
 
@@ -146,38 +153,45 @@ An argument is valid if the premises cannot all be true without the conclusion b
 
 (b) The main course will be either beef or fish. The vegetable will be either peas or corn. We will not have both fish as a main course and corn as a vegetable. Therefore, we will not have both beef as a main course and peas as a vegetable.
 
-    * MB: The main course will be beef.
-    * MF: The main course will be fish.
-    * VP: The vegetable will be peas.
-    * VC: The vegetable will be corn.
-    
-        + $MB \lor MF.$
-        + $VP \lor VC.$
-        + $\neg MF \lor \neg VC.$
-        + Therefore, $\neg MB \lor \neg VP.$
+    -   MB: The main course will be beef.
+
+    -   MF: The main course will be fish.
+
+    -   VP: The vegetable will be peas.
+
+    -   VC: The vegetable will be corn.
+
+        -   $MB \lor MF.$
+        -   $VP \lor VC.$
+        -   $\neg MF \lor \neg VC.$
+        -   Therefore, $\neg MB \lor \neg VP.$
 
     This is an invalid argument. Two conclusions: (1) $MB \land (VP \lor VC).$ and (2) $(MB \lor MF) \land VP.$
 
-(b) Either John or Bill is telling the truth. Either Sam or Bill is lying. Therefore, either John is telling the truth or Sam is lying.
+(c) Either John or Bill is telling the truth. Either Sam or Bill is lying. Therefore, either John is telling the truth or Sam is lying.
 
-    * J: John is telling the truth.
-    * B: Bill is telling the truth.
-    * S: Sam is telling the truth.
-    
-        + $J \lor B.$
-        + $\neg S \lor \neg B.$
-        + Therefore, $J \lor \neg S$.
+    -   J: John is telling the truth.
+
+    -   B: Bill is telling the truth.
+
+    -   S: Sam is telling the truth.
+
+        -   $J \lor B.$
+        -   $\neg S \lor \neg B.$
+        -   Therefore, $J \lor \neg S$.
 
     This is an invalid argument. If \$ J, then S\$, or if $B, then \neg S$.
 
-(c) Either sales will go up and the boss will be happy, or expenses will go up and the boss won’t be happy. Therefore, sales and expenses will not both go up.
+(d) Either sales will go up and the boss will be happy, or expenses will go up and the boss won’t be happy. Therefore, sales and expenses will not both go up.
 
-    * S: Sales will go up.
-    * B: The boss will be happy.
-    * E: Expenses will go up.
-    
-        + $(S \land B) \lor (E \land \neg B)$.
-        + Therefore, $\neg S \lor \neg E$. This is a valid argument. If $S \land B$, then $\neg E \land B$ or not E or B, same for the latter , or if $E \land \neg B$, then $\neg S \land \neg B$.
+    -   S: Sales will go up.
+
+    -   B: The boss will be happy.
+
+    -   E: Expenses will go up.
+
+        -   $(S \land B) \lor (E \land \neg B)$.
+        -   Therefore, $\neg S \lor \neg E$. This is a valid argument. If $S \land B$, then $\neg E \land B$ or not E or B, same for the latter , or if $E \land \neg B$, then $\neg S \land \neg B$.
 
 ### Truth Tables
 
@@ -236,45 +250,35 @@ Make truth tables for the following formulas:
 
 Using the symbol **+** to mean *exclusive or*, **P + Q** means “**P or Q, but not both**.”
 
-| P   | Q   | P + Q |
-|-----|-----|-------|
-| **T**   | **T**   | **F**     |
-| T   | F   | T     |
-| F   | T   | T     |
-| F   | F   | F     |
+| P     | Q     | P + Q |
+|-------|-------|-------|
+| **T** | **T** | **F** |
+| T     | F     | T     |
+| F     | T     | T     |
+| F     | F     | F     |
 
 In mathematics, or always means inclusive or, unless specified otherwise, so **∨** means *inclusive or*.
 :::
 
 (b) Find a formula using only the connectives ∧, ∨, and ¬ that is equivalent to P + Q. Justify your answer with a truth table.
 
-    +--------+--------+--------+---------+--------+-----------+---------------------+
-    | P      | Q      | P + Q  | We need | P ∨ Q  | ¬ (P ∧ Q) | (P ∨ Q) ∧ ¬ (P ∧ Q) |
-    +========+========+========+=========+========+===========+=====================+
-    | T      | T      | F      | T ∧ F   | T      | F T       | F                   |
-    +--------+--------+--------+---------+--------+-----------+---------------------+
-    | T      | F      | T      | T ∧ T   | T      | T F       | T                   |
-    +--------+--------+--------+---------+--------+-----------+---------------------+
-    | F      | T      | T      | T ∧ T   | T      | T F       | T                   |
-    +--------+--------+--------+---------+--------+-----------+---------------------+
-    | F      | F      | F      | F ∧ T   | F      | T F       | F                   |
-    +--------+--------+--------+---------+--------+-----------+---------------------+
+    | P   | Q   | P + Q | We need | P ∨ Q | ¬ (P ∧ Q) | (P ∨ Q) ∧ ¬ (P ∧ Q) |
+    |-----|-----|-------|---------|-------|-----------|---------------------|
+    | T   | T   | F     | T ∧ F   | T     | F T       | F                   |
+    | T   | F   | T     | T ∧ T   | T     | T F       | T                   |
+    | F   | T   | T     | T ∧ T   | T     | T F       | T                   |
+    | F   | F   | F     | F ∧ T   | F     | T F       | F                   |
 
 #### 4.
 
 Find a formula using only the connectives ∧ and ¬ that is equivalent to P ∨ Q. Justify your answer with a truth table.
 
-+--------------+--------------+--------------+---------------------------+
-| P            | Q            | P ∨ Q        | Not both false ¬(¬P ∧ ¬Q) |
-+==============+==============+==============+===========================+
-| T            | T            | T            | **T** F F F               |
-+--------------+--------------+--------------+---------------------------+
-| T            | F            | T            | **T** F F T               |
-+--------------+--------------+--------------+---------------------------+
-| F            | T            | T            | **T** T F F               |
-+--------------+--------------+--------------+---------------------------+
-| F            | F            | F            | **F** T T T               |
-+--------------+--------------+--------------+---------------------------+
+| P   | Q   | P ∨ Q | Not both false ¬(¬P ∧ ¬Q) |
+|-----|-----|-------|---------------------------|
+| T   | T   | T     | **T** F F F               |
+| T   | F   | T     | **T** F F T               |
+| F   | T   | T     | **T** T F F               |
+| F   | F   | F     | **F** T T T               |
 
 #### 5.
 
@@ -282,29 +286,24 @@ Some mathematicians use the symbol ↓ to mean nor. In other words, **P ↓ Q** 
 
 (a) Make a truth table for P ↓ Q.
 
+    | P   | Q   | P ↓ Q equivalent to ¬P ∧ ¬Q |
+    |-----|-----|-----------------------------|
+    | T   | T   | F                           |
+    | T   | F   | F                           |
+    | F   | T   | F                           |
+    | F   | F   | T                           |
 
-    +----------------+----------------+-----------------------------+
-    | P              | Q              | P ↓ Q equivalent to ¬P ∧ ¬Q |
-    +================+================+=============================+
-    | T              | T              | F                           |
-    +----------------+----------------+-----------------------------+
-    | T              | F              | F                           |
-    +----------------+----------------+-----------------------------+
-    | F              | T              | F                           |
-    +----------------+----------------+-----------------------------+
-    | F              | F              | T                           |
-    +----------------+----------------+-----------------------------+
+<!-- -->
 
-
-b. Find a formula using only the connectives ∧, ∨, and ¬ that is equivalent to P ↓ Q.
+b.  Find a formula using only the connectives ∧, ∨, and ¬ that is equivalent to P ↓ Q.
 
     ¬P ∧ ¬Q, equivalent to ¬(P ∨ Q).
 
-c. Find formulas using only the connective ↓ that are equivalent to ¬P, P ∨ Q, and P ∧ Q.
+c.  Find formulas using only the connective ↓ that are equivalent to ¬P, P ∨ Q, and P ∧ Q.
 
-    * ¬P = ¬(P ∨ P) = P ↓ P.
-    * P ∨ Q = ¬(¬P ∧ ¬Q) = ¬(P ↓ Q) = (P ↓ Q) ↓ (P ↓ Q)
-    * P ∧ Q = ¬(¬P ∨ ¬Q) = ¬((P ↓ P) ∨ (Q ↓ Q)) = (P ↓ P) ↓ (Q ↓ Q).
+    -   ¬P = ¬(P ∨ P) = P ↓ P.
+    -   P ∨ Q = ¬(¬P ∧ ¬Q) = ¬(P ↓ Q) = (P ↓ Q) ↓ (P ↓ Q)
+    -   P ∧ Q = ¬(¬P ∨ ¬Q) = ¬((P ↓ P) ∨ (Q ↓ Q)) = (P ↓ P) ↓ (Q ↓ Q).
 
 #### 6.
 
@@ -312,34 +311,30 @@ Some mathematicians write **P \| Q** to mean “**P and Q are not both true**.�
 
 \(a\) Make a truth table for P \| Q.
 
-    +-------------+-------------+-----------------------+
-    | P           | Q           | P \| Q, equivalent to |
-    |             |             |                       |
-    |             |             | ¬(P ∧ Q), ¬P ∨ ¬Q     |
-    +=============+=============+=======================+
-    | T           | T           | F                     |
-    +-------------+-------------+-----------------------+
-    | T           | F           | T                     |
-    +-------------+-------------+-----------------------+
-    | F           | T           | T                     |
-    +-------------+-------------+-----------------------+
-    | F           | F           | T                     |
-    +-------------+-------------+-----------------------+
+| P   | Q   | P \| Q equivalent to ¬(P ∧ Q), ¬P ∨ ¬Q |
+|-----|-----|----------------------------------------|
+| T   | T   | F                                      |
+| T   | F   | T                                      |
+| F   | T   | T                                      |
+| F   | F   | T                                      |
 
 \(b\) Find a formula using only the connectives ∧, ∨, and ¬ that is equivalent to P \| Q.
 
-    ¬(P ∧ Q), ¬P ∨ ¬Q.
+```         
+¬(P ∧ Q), ¬P ∨ ¬Q.
+```
 
 \(c\) Find formulas using only the connective \| that are equivalent to ¬P, P ∨ Q, and P ∧ Q.
 
-
-     ¬P = ¬(P ∧ P) = P \| P
-     
-     P ∨ Q = ¬(¬P ∧ ¬Q) = ¬(P \| P ∧ Q \| Q) = (P \| P) \| (Q \| Q)
-     
-     P ∧ Q = ¬(¬P ∨ ¬Q) = ¬(P \| Q) = (P \| Q) \| (P \| Q)
-     
-     *test this with the truth table*
+```         
+ ¬P = ¬(P ∧ P) = P \| P
+ 
+ P ∨ Q = ¬(¬P ∧ ¬Q) = ¬(P \| P ∧ Q \| Q) = (P \| P) \| (Q \| Q)
+ 
+ P ∧ Q = ¬(¬P ∨ ¬Q) = ¬(P \| Q) = (P \| Q) \| (P \| Q)
+ 
+ *test this with the truth table*
+```
 
 #### 7.
 
@@ -364,41 +359,24 @@ Use truth tables to determine whether or not the arguments in exercise 9 of Sect
 
     This is a valid argument.
 
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | JM     | PM     | JC     | PC              | ¬JM ∨ ¬PM | PM ∨ PC |          |
-    +========+========+========+=================+===========+=========+==========+
-    | **T**  | T      | T      | [T]{.underline} | **F**     | **T**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **T**  | T      | T      | [F]{.underline} | **F**     | **T**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **T**  | T      | F      | [T]{.underline} | **F**     | **T**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **T**  | T      | F      | [F]{.underline} | **F**     | **T**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **T**  | F      | T      | [T]{.underline} | **T**     | **T**   | All true |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **T**  | F      | F      | [T]{.underline} | **T**     | **T**   | All true |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **T**  | F      | T      | [F]{.underline} | **T**     | **F**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **T**  | F      | F      | [F]{.underline} | **T**     | **F**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **F**  | T      | T      | [T]{.underline} | **T**     | **T**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **F**  | T      | T      | [F]{.underline} | **T**     | **T**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **F**  | T      | F      | [T]{.underline} | **T**     | **T**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **F**  | T      | F      | [F]{.underline} | **T**     | **T**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **F**  | F      | T      | [T]{.underline} | **T**     | **T**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **F**  | F      | F      | [T]{.underline} | **T**     | **T**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **F**  | F      | T      | [F]{.underline} | **T**     | **F**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
-    | **F**  | F      | F      | [F]{.underline} | **T**     | **F**   |          |
-    +--------+--------+--------+-----------------+-----------+---------+----------+
+    | JM    | PM  | JC  | PC              | ¬JM ∨ ¬PM | PM ∨ PC |          |
+    |-------|-----|-----|-----------------|-----------|---------|----------|
+    | **T** | T   | T   | [T]{.underline} | **F**     | **T**   |          |
+    | **T** | T   | T   | [F]{.underline} | **F**     | **T**   |          |
+    | **T** | T   | F   | [T]{.underline} | **F**     | **T**   |          |
+    | **T** | T   | F   | [F]{.underline} | **F**     | **T**   |          |
+    | **T** | F   | T   | [T]{.underline} | **T**     | **T**   | All true |
+    | **T** | F   | F   | [T]{.underline} | **T**     | **T**   | All true |
+    | **T** | F   | T   | [F]{.underline} | **T**     | **F**   |          |
+    | **T** | F   | F   | [F]{.underline} | **T**     | **F**   |          |
+    | **F** | T   | T   | [T]{.underline} | **T**     | **T**   |          |
+    | **F** | T   | T   | [F]{.underline} | **T**     | **T**   |          |
+    | **F** | T   | F   | [T]{.underline} | **T**     | **T**   |          |
+    | **F** | T   | F   | [F]{.underline} | **T**     | **T**   |          |
+    | **F** | F   | T   | [T]{.underline} | **T**     | **T**   |          |
+    | **F** | F   | F   | [T]{.underline} | **T**     | **T**   |          |
+    | **F** | F   | T   | [F]{.underline} | **T**     | **F**   |          |
+    | **F** | F   | F   | [F]{.underline} | **T**     | **F**   |          |
 
 (b) The main course will be either beef or fish. The vegetable will be either peas or corn. We will not have both fish as a main course and corn as a vegetable. Therefore, we will not have both beef as a main course and peas as a vegetable.
 
@@ -417,41 +395,24 @@ Use truth tables to determine whether or not the arguments in exercise 9 of Sect
 
     This is an invalid argument.
 
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| MB   | MF   | VP   | VC              | MB ∨ MF | VP ∨ VC | ¬MF ∨ ¬VC | ¬MB ∨ ¬VP       |                  |
-+======+======+======+=================+=========+=========+===========+=================+==================+
-| T    | T    | T    | [T]{.underline} | **T**   | **T**   | **F**     | [F]{.underline} |                  |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| T    | T    | T    | [F]{.underline} | **T**   | **T**   | **T**     | [F]{.underline} | False conclusion |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| T    | T    | F    | [T]{.underline} | **T**   | **T**   | **F**     | [T]{.underline} |                  |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| T    | T    | F    | [F]{.underline} | **T**   | **F**   | **T**     | [T]{.underline} |                  |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| T    | F    | T    | [T]{.underline} | **T**   | **T**   | **T**     | [F]{.underline} | False conclusion |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| T    | F    | F    | [T]{.underline} | **T**   | **T**   | **T**     | [T]{.underline} | All true         |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| T    | F    | T    | [F]{.underline} | **T**   | **T**   | **T**     | [F]{.underline} | False conclusion |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| T    | F    | F    | [F]{.underline} | **T**   | **F**   | **T**     | [T]{.underline} |                  |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| F    | T    | T    | [T]{.underline} | **T**   | **T**   | **F**     | [T]{.underline} |                  |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| F    | T    | T    | [F]{.underline} | **T**   | **T**   | **T**     | [T]{.underline} | All true         |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| F    | T    | F    | [T]{.underline} | **T**   | **T**   | **F**     | [T]{.underline} |                  |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| F    | T    | F    | [F]{.underline} | **T**   | **F**   | **T**     | [T]{.underline} |                  |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| F    | F    | T    | [T]{.underline} | **F**   | **T**   | **T**     | [T]{.underline} |                  |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| F    | F    | F    | [T]{.underline} | **F**   | **T**   | **T**     | [T]{.underline} |                  |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| F    | F    | T    | [F]{.underline} | **F**   | **T**   | **T**     | [T]{.underline} |                  |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
-| F    | F    | F    | [F]{.underline} | **F**   | **F**   | **T**     | [T]{.underline} |                  |
-+------+------+------+-----------------+---------+---------+-----------+-----------------+------------------+
+| MB | MF | VP | VC | MB ∨ MF | VP ∨ VC | ¬MF ∨ ¬VC | ¬MB ∨ ¬VP |   |
+|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| T | T | T | [T]{.underline} | **T** | **T** | **F** | [F]{.underline} |  |
+| T | T | T | [F]{.underline} | **T** | **T** | **T** | [F]{.underline} | False conclusion |
+| T | T | F | [T]{.underline} | **T** | **T** | **F** | [T]{.underline} |  |
+| T | T | F | [F]{.underline} | **T** | **F** | **T** | [T]{.underline} |  |
+| T | F | T | [T]{.underline} | **T** | **T** | **T** | [F]{.underline} | False conclusion |
+| T | F | F | [T]{.underline} | **T** | **T** | **T** | [T]{.underline} | All true |
+| T | F | T | [F]{.underline} | **T** | **T** | **T** | [F]{.underline} | False conclusion |
+| T | F | F | [F]{.underline} | **T** | **F** | **T** | [T]{.underline} |  |
+| F | T | T | [T]{.underline} | **T** | **T** | **F** | [T]{.underline} |  |
+| F | T | T | [F]{.underline} | **T** | **T** | **T** | [T]{.underline} | All true |
+| F | T | F | [T]{.underline} | **T** | **T** | **F** | [T]{.underline} |  |
+| F | T | F | [F]{.underline} | **T** | **F** | **T** | [T]{.underline} |  |
+| F | F | T | [T]{.underline} | **F** | **T** | **T** | [T]{.underline} |  |
+| F | F | F | [T]{.underline} | **F** | **T** | **T** | [T]{.underline} |  |
+| F | F | T | [F]{.underline} | **F** | **T** | **T** | [T]{.underline} |  |
+| F | F | F | [F]{.underline} | **F** | **F** | **T** | [T]{.underline} |  |
 
 (c) Either John or Bill is telling the truth. Either Sam or Bill is lying. Therefore, either John is telling the truth or Sam is lying.
 
@@ -461,6 +422,7 @@ Use truth tables to determine whether or not the arguments in exercise 9 of Sect
 
 ::: callout-note
 ## Tautologies & Contradictions
+
 Formulas that are always true, such as P ∨ ¬P, are called tautologies.
 
 Similarly, formulas that are always false are called contradictions. For example, P ∧ ¬P is a contradiction.
@@ -472,17 +434,12 @@ Similarly, formulas that are always false are called contradictions. For example
 
 (c) (P ∨ Q) ∨ (¬ P ∨ ¬Q). Tautology.
 
-+-------+-------+-------+----------+--------------------------+----------+---------------------------+---------------------------+
-| P     | Q     | P ∨ Q | ¬ P ∨ ¬Q | a\. (P ∨ Q) ∧ (¬ P ∨ ¬Q) | ¬ P ∧ ¬Q | b\. (P ∨ Q) ∧ (¬ P ∧ ¬Q). | c\. (P ∨ Q) ∨ (¬ P ∨ ¬Q). |
-+=======+=======+=======+==========+==========================+==========+===========================+===========================+
-| T     | T     | T     | F        | F                        | F        | F                         | T                         |
-+-------+-------+-------+----------+--------------------------+----------+---------------------------+---------------------------+
-| T     | F     | T     | T        | T                        | F        | F                         | T                         |
-+-------+-------+-------+----------+--------------------------+----------+---------------------------+---------------------------+
-| F     | T     | T     | T        | T                        | F        | F                         | T                         |
-+-------+-------+-------+----------+--------------------------+----------+---------------------------+---------------------------+
-| F     | F     | F     | T        | F                        | T        | F                         | T                         |
-+-------+-------+-------+----------+--------------------------+----------+---------------------------+---------------------------+
+| P | Q | P ∨ Q | ¬ P ∨ ¬Q | a\. (P ∨ Q) ∧ (¬ P ∨ ¬Q) | ¬ P ∧ ¬Q | b\. (P ∨ Q) ∧ (¬ P ∧ ¬Q). | c\. (P ∨ Q) ∨ (¬ P ∨ ¬Q). |
+|---------|---------|---------|---------|---------|---------|---------|---------|
+| T | T | T | F | F | F | F | T |
+| T | F | T | T | T | F | F | T |
+| F | T | T | T | T | F | F | T |
+| F | F | F | T | F | T | F | T |
 
 (d) \[P ∧ (Q ∨ ¬R)\] ∨ (¬P ∨ R). Tautology.
 
@@ -525,7 +482,7 @@ $$
 \end{align}
 $$
 
-(c)
+(c) 
 
 $$
 \begin{align}
@@ -652,13 +609,13 @@ $$
 
 #### 9.
 
-(a) (A \\ B) \\ C. 
+(a) (A \\ B) \\ C.
 
 $$ 
 (x \in A \land x \notin B) \land x \notin C.
 $$
 
-(b) A \\ (B \\ C). 
+(b) A \\ (B \\ C).
 
 $$
 \begin{align}
@@ -667,7 +624,7 @@ x \in A \land (x \notin B \lor x \in C)
 \end{align}
 $$
 
-(c) (A \\ B) ∪ (A ∩ C). 
+(c) (A \\ B) ∪ (A ∩ C).
 
 $$
 \begin{align}
@@ -678,7 +635,7 @@ $$
 
 b and c are equivalent.
 
-(d) (A \\ B) ∩ (A \\ C). 
+(d) (A \\ B) ∩ (A \\ C).
 
 $$
 \begin{align}
@@ -687,7 +644,7 @@ x \in A \land (x \notin B \land x \notin C)
 \end{align}
 $$
 
-(e) A \\ (B ∪ C). 
+(e) A \\ (B ∪ C).
 
 $$
 \begin{align}
@@ -763,7 +720,9 @@ When A and B are disjoint, $(A \cap B) = \emptyset$, then $A \triangle B = (A \c
 
 Use any method you wish to verify the following identities:
 
-(a) Need to generalise 15, 16, 17^[I could not work out question 15a]
+(a) Need to generalise 15, 16, 17[^4]
+
+[^4]: I could not work out question 15a
 
 $$
 \begin{align}
