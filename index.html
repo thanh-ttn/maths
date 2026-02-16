@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -26,14 +26,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="index_files/libs/clipboard/clipboard.min.js"></script>
 <script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="index_files/libs/quarto-html/popper.min.js"></script>
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -49,7 +50,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -181,7 +182,7 @@ window.Quarto = {
 <li>J: John is telling the truth.</li>
 <li>B: Bill is telling the truth.</li>
 </ul>
-<p><span class="math inline">\((J \land B) \lor (\neg J \land \neg B)\)</span> or <span class="math inline">\(\neg(P \lor T)\)</span>.</p></li>
+<p><span class="math inline">\((J \land B) \lor (\neg J \land \neg B)\)</span> or <span class="math inline">\(\neg(J \lor B)\)</span>.</p></li>
 <li><p>I’ll have either fish or chicken, but I won’t have both fish and mashed potatoes.</p>
 <ul>
 <li>F: I’ll have fish.</li>
@@ -281,7 +282,7 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Valid Argument
+<span class="screen-reader-only">Note</span>Valid Argument
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -519,7 +520,7 @@ Valid Argument
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exclusive Or
+<span class="screen-reader-only">Note</span>Exclusive Or
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1169,7 +1170,7 @@ Exclusive Or
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tautologies &amp; Contradictions
+<span class="screen-reader-only">Note</span>Tautologies &amp; Contradictions
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1364,7 +1365,7 @@ Tautologies &amp; Contradictions
 <li><p>x is divisible by both 2 and 3 but not 4.</p>
 <p>Let P(x, y) stand for x is divisible by y, then P(x, 2) ∧ P(x, 3) ∧ ¬P(x, 4).</p></li>
 <li><p>x and y are natural numbers, and exactly one of them is prime.</p>
-<p>Let N(x) stand for x is a natural number, and P(x) stand for x is a prime number, then N(x) ∧ N(y) ∧ [(P(x) ∧ P(y)) ∨ (¬P(x) ∧ P(y))].</p></li>
+<p>Let N(x) stand for x is a natural number, and P(x) stand for x is a prime number, then N(x) ∧ N(y) ∧ [(P(x) ∧ ¬P(y)) ∨ (¬P(x) ∧ P(y))].</p></li>
 </ol>
 </section>
 <section id="section-19" class="level4">
@@ -1429,7 +1430,11 @@ Tautologies &amp; Contradictions
 <h3 data-number="1.4" class="anchored" data-anchor-id="operations-on-sets"><span class="header-section-number">1.4</span> Operations on Sets</h3>
 <section id="exercise4.6" class="level4">
 <h4 class="anchored" data-anchor-id="exercise4.6">6.</h4>
-<p>Venn diagram</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="md-HowToProveIt_files/1.4.06.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" width="186"></p>
+</figure>
+</div>
 <ol type="a">
 <li><span class="math inline">\((A ∪ B) \setminus&nbsp;C = (A &nbsp;\setminus C) ∪ (B \setminus&nbsp;C)\)</span>.</li>
 <li><span class="math inline">\(A ∪ (B \setminus&nbsp;C) = (A ∪ B) \setminus&nbsp;(C \setminus&nbsp;A)\)</span>.</li>
@@ -1437,7 +1442,7 @@ Tautologies &amp; Contradictions
 </section>
 <section id="section-25" class="level4">
 <h4 class="anchored" data-anchor-id="section-25">7.</h4>
-<p>Verify the identities in exercise <span class="citation" data-cites="exercise4.6">@exercise4.6</span> by writing out (using logical symbols) what it means for an object x to be an element of each set and then using logical equivalences.</p>
+<p>Verify the identities in exercise 6 by writing out (using logical symbols) what it means for an object x to be an element of each set and then using logical equivalences.</p>
 <ol type="a">
 <li></li>
 </ol>
@@ -1590,7 +1595,7 @@ A \triangle B = (A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \
 \text{RHS: }
 \text{Suppose } &amp;x \in (A \cup C) \setminus (B \setminus C) \lor x \in (B \setminus C) \setminus (A \cup C) \\
 &amp;(x \in (A \cup C) \land x \in (\neg B  \cup C))  \lor (x \in (B \setminus C) \land x \in (\neg A \cap \neg C)) \\
-&amp;x \in (C \cup (A \setminus B)) \lor x \in (\neg C \cup \neg A \cup B) ???
+&amp;x \in (C \cup (A \setminus B)) \lor x \in (\neg C \cap \neg A \cap B) ???
 \end{align}
 \]</span></p>
 <ol start="2" type="a">
@@ -1692,13 +1697,14 @@ A \triangle B = (A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
