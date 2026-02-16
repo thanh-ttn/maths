@@ -43,7 +43,7 @@ toc-location: right
     -   J: John is telling the truth.
     -   B: Bill is telling the truth.
 
-    $(J \land B) \lor (\neg J \land \neg B)$ or $\neg(P \lor T)$.
+    $(J \land B) \lor (\neg J \land \neg B)$ or $\neg(J \lor B)$.
 
 (b) I’ll have either fish or chicken, but I won’t have both fish and mashed potatoes.
 
@@ -510,7 +510,7 @@ Analyze the logical forms of the following statements:
 
 (c) x and y are natural numbers, and exactly one of them is prime.
 
-    Let N(x) stand for x is a natural number, and P(x) stand for x is a prime number, then N(x) ∧ N(y) ∧ \[(P(x) ∧ P(y)) ∨ (¬P(x) ∧ P(y))\].
+    Let N(x) stand for x is a natural number, and P(x) stand for x is a prime number, then N(x) ∧ N(y) ∧ \[(P(x) ∧ ¬P(y)) ∨ (¬P(x) ∧ P(y))\].
 
 #### 2.
 
@@ -577,14 +577,14 @@ What are the truth sets of the following statements? List a few elements of the 
 
 #### 6. {#exercise4.6}
 
-Venn diagram
+![](md-HowToProveIt_files/1.4.06.PNG){fig-align="center" width="186"}
 
 (a) $(A ∪ B) \setminus C = (A  \setminus C) ∪ (B \setminus C)$.
 (b) $A ∪ (B \setminus C) = (A ∪ B) \setminus (C \setminus A)$.
 
 #### 7.
 
-Verify the identities in exercise @exercise4.6 by writing out (using logical symbols) what it means for an object x to be an element of each set and then using logical equivalences.
+Verify the identities in exercise 6 by writing out (using logical symbols) what it means for an object x to be an element of each set and then using logical equivalences.
 
 (a) 
 
@@ -734,7 +734,7 @@ $$
 \text{RHS: }
 \text{Suppose } &x \in (A \cup C) \setminus (B \setminus C) \lor x \in (B \setminus C) \setminus (A \cup C) \\
 &(x \in (A \cup C) \land x \in (\neg B  \cup C))  \lor (x \in (B \setminus C) \land x \in (\neg A \cap \neg C)) \\
-&x \in (C \cup (A \setminus B)) \lor x \in (\neg C \cup \neg A \cup B) ???
+&x \in (C \cup (A \setminus B)) \lor x \in (\neg C \cap \neg A \cap B) ???
 \end{align}
 $$
 
