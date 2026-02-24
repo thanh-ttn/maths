@@ -770,3 +770,269 @@ $$
 &(x \notin C) \land [(x \in A \land x \notin B) \lor (x \in B \land x \notin A)]
 \end{align}
 $$
+
+### The Conditional and Biconditional Connectives
+
+#### Notes
+
+$P \rightarrow Q$ is a conditional statement. It says that if P then Q, where P is its antecedent and Q is its consequent.
+
+| P     | Q     | $P \rightarrow Q$ | = $\neg P \lor Q$| = $\neg (P \land \neg Q)$|
+|-------|-------|-------|-------|-------|
+| T     |  T    | T     | T     | T     |
+| T     | F     | F     | F     | F     |
+| F     | T     | T     | T     | T     |
+| F     | F     | T     | T     | T     |
+
+E.g. You do not stay late, or your brain will not grow!
+~ If you stay late, your brain will not grow.
+
+Recall, **an argument is valid if the premises cannot all be true without the conclusion being true as well.**
+The following argument is valid by line 1 of the truth table as above. But it does not hold for $P \rightarrow Q, Q, \therefore P$, as P could be fasle as in line 3.
+$$
+\begin{array}{l}
+P \rightarrow Q \\
+P \\
+\hline
+\therefore Q
+\end{array}
+$$
+
+It is called $Q \rightarrow P$ is the *converse* of $P \rightarrow Q$. And they do not mean the same thing. Indeed, $P \rightarrow Q$ is equivalent to $\neg Q \rightarrow \neg P$.
+
+Other ways of expressing the idea $P \rightarrow Q$ that are used often in mathematics:
+    P implies Q.
+    Q, if P.
+    P only if Q. ($\neg Q \rightarrow \neg P$)
+    P is a sufficient condition for Q.
+    Q is a necessary condition for P. ($\neg Q \rightarrow \neg P$)
+
+$P \leftrightarrow Q$ is a biconditional statement. It is equivalent to $(P \rightarrow Q) \land (Q \rightarrow P)$.
+
+| P     | Q     | $P \rightarrow Q$ | $Q \rightarrow P$ | $(P \rightarrow Q) \land (Q \rightarrow P) = P \leftrightarrow Q$|
+|-------|-------|-------|-------|-------|
+| T     |  T    | T     | T     | T     |
+| T     | F     | F     | T     | F     |
+| F     | T     | T     | F     | F     |
+| F     | F     | T     | T     | T     |
+
+$P \leftrightarrow Q$ is phrased as P *if and only if* Q, or "P iff Q", or "P is a necessary and sufficient condition for Q".
+
+#### 1.
+
+Analyze the logical forms of the following statements:
+(a) If this gas either has an unpleasant smell or is not explosive, then it isn’t hydrogen.
+S: This gas has an unpleasant smell.
+E: This gas is explosive.
+H: This gas is hydrogen.
+$(S \lor \neg E) \rightarrow \neg H.$
+
+(b) Having both a fever and a headache is a sufficient condition for George to go to the doctor.
+F: George has a fever.
+H: George has a headache.
+D: George goes to the doctor.
+$(F \land H) \rightarrow D.$
+
+(c) Both having a fever and having a headache are sufficient conditions for George to go to the doctor.
+$F \rightarrow D \land H \rightarrow D.$
+
+(d) If x ≠ 2, then a necessary condition for x to be prime is that x be odd.
+P: x is a prime number
+O: x is an odd number
+T: x is not equal 2.
+$T \rightarrow (P \rightarrow O).$
+
+#### 3.
+
+Analyze the logical form of the following statement:
+(a) If it is raining, then it is windy and the sun is not shining. Now analyze the following statements. Also, for each statement determine whether the statement is equivalent to either statement (a) or its converse.
+
+R: It is raining.
+W: It is windy.
+S: The sun is shining.
+$R \rightarrow (W \land \neg S).$
+
+(b) It is windy and not sunny only if it is raining.
+
+$\neg R \rightarrow \neg (W \land \neg S).$
+This is a converse of statement (a).
+
+(c) Rain is a sufficient condition for wind with no sunshine.
+
+$R \rightarrow (W \land \neg S).$
+This is equivalent to statement (a).
+
+(d) Rain is a necessary condition for wind with no sunshine.
+
+$\neg R \rightarrow \neg (W \land \neg S).$
+This is a converse of statment (a).
+
+(e) It’s not raining, if either the sun is shining or it’s not windy.
+
+$(S \lor \neg W) \rightarrow \neg R. = \neg(\neg S \land W) \rightarrow \neg R.$
+This is equivalent to statement (a).
+
+(f) Wind is a necessary condition for it to be rainy, and so is a lack of sunshine.
+
+$$
+\begin{align}
+&(\neg W \rightarrow \neg R) \land (S \rightarrow \neg R) \\ 
+=& (W \lor \neg R) \land (\neg S \lor \neg R) \\
+=& \neg R \lor (W \land \neg S) \\
+=& R \rightarrow (W \land \neg S).
+\end{align}
+$$
+
+This is equivalent to statment (a).
+
+(g) Either it is windy only if it is raining, or it is not sunny only if it is raining.
+
+$$
+\begin{align}
+&(\neg R \rightarrow \neg W) \lor (\neg R \rightarrow S) \\ 
+=& (R \lor \neg W) \lor (R \lor S) \\
+=&  R \lor (\neg W \lor  S) \\
+=& \neg R \rightarrow \neg (W  \land \neg S). \\
+\end{align}
+$$
+
+This is a converse of statement (a).
+
+#### 4.
+
+#### 7.
+
+#### 12.
+
+#### Ex The book of proof
+
+##### 2.5.2
+
+    | Q     | R     | $Q \lor R$ | $R \land Q$| $(Q \lor R) \rightarrow (R \land Q)$ |
+    |-------|-------|-------|-------|-------|
+    | T     | T     | T     | T     | T     |
+    | T     | F     | T     | F     | F     |
+    | F     | T     | T     | F     | F     |
+    | F     | F     | F     | F     | T     |
+
+##### 2.5.10
+
+$((P \land Q) \lor R) \rightarrow (R \lor S)$ is false,
+then $((P \land Q) \lor R)$ is true and $(R \lor S)$ is false.
+If $(R \lor S)$ is false, R is false and S is false.
+If $((P \land Q) \lor R)$ is true and R is false, $(P \land Q)$ is true, then P is true and Q is true.
+
+##### 2.6.A.1
+Use truth tables to show that the following statements are logically equivalent. 
+
+    | P   | Q   | R   | $P \land (Q \lor R)$  | $(P \land Q) \lor (P \land R)$ |
+    |-----|-----|-----|-----|-----|
+    | T   | T   | T   | T   | T **T** T   |
+    | T   | T   | F   | T   | T **T** F   |
+    | T   | F   | T   | T   | F **T** T   |
+    | T   | F   | F   | F   | T **F** F   |
+    | F   | T   | T   | F   | F **F** F   |
+    | F   | T   | F   | F   | F **F** F   |
+    | F   | F   | T   | F   | F **F** F   |
+    | F   | F   | F   | F   | F **F** F   |
+
+##### 2.6.A.7
+    | P     | Q     | $P \rightarrow Q$ | $(P \land \neg Q) \rightarrow (Q \land \neg Q)$ |
+    |-------|-------|-------|-------|
+    | T     | T     | T     | T     |
+    | T     | F     | F     | F     |
+    | F     | T     | T     | T     |
+    | F     | F     | T     | T     |
+
+##### 2.6.B.10
+LHS: $(P \rightarrow Q) \lor R = \neg P \lor Q \lor R$
+RHS: $\neg((P \land \neg Q) \land \neg R) = \neg(P \land \neg Q) \lor R = \neg P \lor Q \lor R $.
+
+### Quantificational Logic
+
+#### Notes
+
+P(x) can be true for some values of x and false for others i.e. x is a free variable. To be able to know how many of x that makes P(x) true, we use quantifiers. By then, x is a bound variable, by the quantifiers.
+
+-   $\forall x P(x)$ means "For all x, P(x)."
+
+-   $\exists x P(x)$ means "There exists an x such that P(x)."
+
+#### 1.
+
+Analyze the logical forms of the following statements.
+(a) Anyone who has forgiven at least one person is a saint.
+
+If a person has forgiven at least one person, he is a saint. $\forall$ persons (If he has forgiven at least one person, he is a saint). Says F(x, y) is x has forgiven y, and S(x) is x is a saint. $\forall x(\exists y F(x,y) \rightarrow S(x))$.
+
+(b) Nobody in the calculus class is smarter than everybody in the discrete math class.
+
+There not exists a person in the calculus class who is smarter than everybody in the discrete math class. Says a person in the cal class is C(x), x is smarter than everybody in the discrete math class is $\forall y C(x, y)$. So $\nexists x [C(x) \land \forall y C(x, y)]$.
+
+I solved this incorrectly. The correct answer is - x is smarter than everybody in the discrete math class means - If y in the discrete math, then x is smarther than y. Let D(y) be y in the discrete math. Hence, $\nexists x [C(x) \land \forall y (D(y) \rightarrow C(x, y))]$.
+
+(c) Everyone likes Mary, except Mary herself.
+
+For all person, if he is not Mary, he likes Mary. Let B(x) be a person is Mary, and L(x) be he likes Mary. So, $\forall x (\neg B(x) \rightarrow L(x))$.
+
+(d) Jane saw a police officer, and Roger saw one too.
+
+There exists a police officer whom Jane saw, and there exists a police office whom Roger saw. Let S(j, x) stands for Jane saw a police and S(r, y) stands for Roger saw a police. Then, $\exists x  (P(x) \land S(j, x)) \land \exists y (P(y) \land S(r, y))$.
+
+(e) Jane saw a police officer, and Roger saw him too.
+
+There exists a police officer whom Jane and Roger saw.
+$\exists x (P(x) \land S(j,x) \land S(r, x)). $
+
+#### 3. 
+Analyze the logical forms of the following statements. The universe of discourse is R. What are the free variables in each statement?
+
+(a) Every number that is larger than x is larger than y.
+
+$\forall a ((a>x) \rightarrow (a>y))$. 
+Free variables are x and y.
+
+(b) For every number a, the equation $ax^2 + 4x − 2 = 0$ has at least one solution iff $a ≥ −2$.
+
+$\forall a \geq -2 (\exists x (ax^2 + 4x − 2 = 0))$.
+There's no free variable.
+
+(c) All solutions of the inequality $x^3 − 3x < 3$ are smaller than 10.
+
+$\forall x < 10 (x^3 − 3x < 3)$.
+No free variable.
+
+(d) If there is a number x such that $x^2 + 5x = w$ and there is a number y such that $4 − y^2 = w$, then w is strictly between −10 and 10.
+
+$(\exists x (x^2 + 5x = w) \land \exists x (4 − y^2 = w)) \rightarrow \forall w(-10 \leq w \leq 10.)$
+
+#### Ex The book of proof
+
+##### 2.7
+Write the following as English sentences. Say whether they are true or false.
+
+1. $\forall x \in \mathbb{R}, x^2 > 0$
+For every real number x, $x^2 > 0$. This is true.
+
+3. $\exists a \in \mathbb{R}, \forall x \in \mathbb{R}, ax = x$
+There exists a real number a such that ax = x for all real number x. This is true. a = 1.
+
+6. $\exists n \in \mathbb{N}, \forall X \in \mathcal{P} (\mathbb{N}), |X| < n$
+There exists a natrual number n such that n is greater than the number of elements of every sets of natural number. This is true.
+
+9. $\forall n \in \mathbb{Z}, \exists m \in \mathbb{Z}, m = n + 5$
+For all integer n, there's a coresponding integer m such that n = m -5. This is true.
+
+##### 2.9
+Translate each of the following sentences into symbolic logic.
+
+4. For every prime number p, there is another prime number q with q > p.
+$\forall p \in \mathbb{P}(p), \exists q \in \mathbb{P}(q), q > p$
+
+7. There exists a real number a for which a + x = x for every real number x.
+$\exists a \in  \mathbb{R}, \forall x \in \mathbb{R}, a + x = x$
+
+13. Everything is funny as long as it is happening to somebody else.
+
+For all things, if and only if it happens to somebody else, it is funny. Let F(x) be a thing is funny; H(x, y) a thing happens to a person y.
+$\forall x (\exists y, \neg(y = myself) \land H(x,y) \leftrightarrow F(x))$

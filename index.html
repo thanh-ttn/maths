@@ -122,6 +122,23 @@ window.Quarto = {
   <li><a href="#section-28" id="toc-section-28" class="nav-link" data-scroll-target="#section-28">11.</a></li>
   <li><a href="#section-29" id="toc-section-29" class="nav-link" data-scroll-target="#section-29">15.</a></li>
   </ul></li>
+  <li><a href="#the-conditional-and-biconditional-connectives" id="toc-the-conditional-and-biconditional-connectives" class="nav-link" data-scroll-target="#the-conditional-and-biconditional-connectives"><span class="header-section-number">1.5</span> The Conditional and Biconditional Connectives</a>
+  <ul class="collapse">
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
+  <li><a href="#section-30" id="toc-section-30" class="nav-link" data-scroll-target="#section-30">1.</a></li>
+  <li><a href="#section-31" id="toc-section-31" class="nav-link" data-scroll-target="#section-31">3.</a></li>
+  <li><a href="#section-32" id="toc-section-32" class="nav-link" data-scroll-target="#section-32">4.</a></li>
+  <li><a href="#section-33" id="toc-section-33" class="nav-link" data-scroll-target="#section-33">7.</a></li>
+  <li><a href="#section-34" id="toc-section-34" class="nav-link" data-scroll-target="#section-34">12.</a></li>
+  <li><a href="#ex-the-book-of-proof" id="toc-ex-the-book-of-proof" class="nav-link" data-scroll-target="#ex-the-book-of-proof">Ex The book of proof</a></li>
+  </ul></li>
+  <li><a href="#quantificational-logic" id="toc-quantificational-logic" class="nav-link" data-scroll-target="#quantificational-logic"><span class="header-section-number">1.6</span> Quantificational Logic</a>
+  <ul class="collapse">
+  <li><a href="#notes-1" id="toc-notes-1" class="nav-link" data-scroll-target="#notes-1">Notes</a></li>
+  <li><a href="#section-37" id="toc-section-37" class="nav-link" data-scroll-target="#section-37">1.</a></li>
+  <li><a href="#section-38" id="toc-section-38" class="nav-link" data-scroll-target="#section-38">3.</a></li>
+  <li><a href="#ex-the-book-of-proof-1" id="toc-ex-the-book-of-proof-1" class="nav-link" data-scroll-target="#ex-the-book-of-proof-1">Ex The book of proof</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -1631,6 +1648,309 @@ A \triangle B = (A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \
 &amp;(x \notin C) \land [(x \in A \land x \notin B) \lor (x \in B \land x \notin A)]
 \end{align}
 \]</span></p>
+</section>
+</section>
+<section id="the-conditional-and-biconditional-connectives" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="the-conditional-and-biconditional-connectives"><span class="header-section-number">1.5</span> The Conditional and Biconditional Connectives</h3>
+<section id="notes" class="level4">
+<h4 class="anchored" data-anchor-id="notes">Notes</h4>
+<p><span class="math inline">\(P \rightarrow Q\)</span> is a conditional statement. It says that if P then Q, where P is its antecedent and Q is its consequent.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th><span class="math inline">\(P \rightarrow Q\)</span></th>
+<th>= <span class="math inline">\(\neg P \lor Q\)</span></th>
+<th>= <span class="math inline">\(\neg (P \land \neg Q)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt>E.g. You do not stay late, or your brain will not grow!</dt>
+<dd>
+If you stay late, your brain will not grow.
+</dd>
+</dl>
+<p>Recall, <strong>an argument is valid if the premises cannot all be true without the conclusion being true as well.</strong> The following argument is valid by line 1 of the truth table as above. But it does not hold for <span class="math inline">\(P \rightarrow Q, Q, \therefore P\)</span>, as P could be fasle as in line 3. <span class="math display">\[
+\begin{array}{l}
+P \rightarrow Q \\
+P \\
+\hline
+\therefore Q
+\end{array}
+\]</span></p>
+<p>It is called <span class="math inline">\(Q \rightarrow P\)</span> is the <em>converse</em> of <span class="math inline">\(P \rightarrow Q\)</span>. And they do not mean the same thing. Indeed, <span class="math inline">\(P \rightarrow Q\)</span> is equivalent to <span class="math inline">\(\neg Q \rightarrow \neg P\)</span>.</p>
+<p>Other ways of expressing the idea <span class="math inline">\(P \rightarrow Q\)</span> that are used often in mathematics: P implies Q. Q, if P. P only if Q. (<span class="math inline">\(\neg Q \rightarrow \neg P\)</span>) P is a sufficient condition for Q. Q is a necessary condition for P. (<span class="math inline">\(\neg Q \rightarrow \neg P\)</span>)</p>
+<p><span class="math inline">\(P \leftrightarrow Q\)</span> is a biconditional statement. It is equivalent to <span class="math inline">\((P \rightarrow Q) \land (Q \rightarrow P)\)</span>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th><span class="math inline">\(P \rightarrow Q\)</span></th>
+<th><span class="math inline">\(Q \rightarrow P\)</span></th>
+<th><span class="math inline">\((P \rightarrow Q) \land (Q \rightarrow P) = P \leftrightarrow Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(P \leftrightarrow Q\)</span> is phrased as P <em>if and only if</em> Q, or “P iff Q”, or “P is a necessary and sufficient condition for Q”.</p>
+</section>
+<section id="section-30" class="level4">
+<h4 class="anchored" data-anchor-id="section-30">1.</h4>
+<p>Analyze the logical forms of the following statements: (a) If this gas either has an unpleasant smell or is not explosive, then it isn’t hydrogen. S: This gas has an unpleasant smell. E: This gas is explosive. H: This gas is hydrogen. <span class="math inline">\((S \lor \neg E) \rightarrow \neg H.\)</span></p>
+<ol start="2" type="a">
+<li><p>Having both a fever and a headache is a sufficient condition for George to go to the doctor. F: George has a fever. H: George has a headache. D: George goes to the doctor. <span class="math inline">\((F \land H) \rightarrow D.\)</span></p></li>
+<li><p>Both having a fever and having a headache are sufficient conditions for George to go to the doctor. <span class="math inline">\(F \rightarrow D \land H \rightarrow D.\)</span></p></li>
+<li><p>If x ≠ 2, then a necessary condition for x to be prime is that x be odd. P: x is a prime number O: x is an odd number T: x is not equal 2. <span class="math inline">\(T \rightarrow (P \rightarrow O).\)</span></p></li>
+</ol>
+</section>
+<section id="section-31" class="level4">
+<h4 class="anchored" data-anchor-id="section-31">3.</h4>
+<p>Analyze the logical form of the following statement: (a) If it is raining, then it is windy and the sun is not shining. Now analyze the following statements. Also, for each statement determine whether the statement is equivalent to either statement (a) or its converse.</p>
+<p>R: It is raining. W: It is windy. S: The sun is shining. <span class="math inline">\(R \rightarrow (W \land \neg S).\)</span></p>
+<ol start="2" type="a">
+<li>It is windy and not sunny only if it is raining.</li>
+</ol>
+<p><span class="math inline">\(\neg R \rightarrow \neg (W \land \neg S).\)</span> This is a converse of statement (a).</p>
+<ol start="3" type="a">
+<li>Rain is a sufficient condition for wind with no sunshine.</li>
+</ol>
+<p><span class="math inline">\(R \rightarrow (W \land \neg S).\)</span> This is equivalent to statement (a).</p>
+<ol start="4" type="a">
+<li>Rain is a necessary condition for wind with no sunshine.</li>
+</ol>
+<p><span class="math inline">\(\neg R \rightarrow \neg (W \land \neg S).\)</span> This is a converse of statment (a).</p>
+<ol start="5" type="a">
+<li>It’s not raining, if either the sun is shining or it’s not windy.</li>
+</ol>
+<p><span class="math inline">\((S \lor \neg W) \rightarrow \neg R. = \neg(\neg S \land W) \rightarrow \neg R.\)</span> This is equivalent to statement (a).</p>
+<ol start="6" type="a">
+<li>Wind is a necessary condition for it to be rainy, and so is a lack of sunshine.</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+&amp;(\neg W \rightarrow \neg R) \land (S \rightarrow \neg R) \\
+=&amp; (W \lor \neg R) \land (\neg S \lor \neg R) \\
+=&amp; \neg R \lor (W \land \neg S) \\
+=&amp; R \rightarrow (W \land \neg S).
+\end{align}
+\]</span></p>
+<p>This is equivalent to statment (a).</p>
+<ol start="7" type="a">
+<li>Either it is windy only if it is raining, or it is not sunny only if it is raining.</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+&amp;(\neg R \rightarrow \neg W) \lor (\neg R \rightarrow S) \\
+=&amp; (R \lor \neg W) \lor (R \lor S) \\
+=&amp;  R \lor (\neg W \lor  S) \\
+=&amp; \neg R \rightarrow \neg (W  \land \neg S). \\
+\end{align}
+\]</span></p>
+<p>This is a converse of statement (a).</p>
+</section>
+<section id="section-32" class="level4">
+<h4 class="anchored" data-anchor-id="section-32">4.</h4>
+</section>
+<section id="section-33" class="level4">
+<h4 class="anchored" data-anchor-id="section-33">7.</h4>
+</section>
+<section id="section-34" class="level4">
+<h4 class="anchored" data-anchor-id="section-34">12.</h4>
+</section>
+<section id="ex-the-book-of-proof" class="level4">
+<h4 class="anchored" data-anchor-id="ex-the-book-of-proof">Ex The book of proof</h4>
+<section id="section-35" class="level5">
+<h5 class="anchored" data-anchor-id="section-35">2.5.2</h5>
+<pre><code>| Q     | R     | $Q \lor R$ | $R \land Q$| $(Q \lor R) \rightarrow (R \land Q)$ |
+|-------|-------|-------|-------|-------|
+| T     | T     | T     | T     | T     |
+| T     | F     | T     | F     | F     |
+| F     | T     | T     | F     | F     |
+| F     | F     | F     | F     | T     |</code></pre>
+</section>
+<section id="section-36" class="level5">
+<h5 class="anchored" data-anchor-id="section-36">2.5.10</h5>
+<p><span class="math inline">\(((P \land Q) \lor R) \rightarrow (R \lor S)\)</span> is false, then <span class="math inline">\(((P \land Q) \lor R)\)</span> is true and <span class="math inline">\((R \lor S)\)</span> is false. If <span class="math inline">\((R \lor S)\)</span> is false, R is false and S is false. If <span class="math inline">\(((P \land Q) \lor R)\)</span> is true and R is false, <span class="math inline">\((P \land Q)\)</span> is true, then P is true and Q is true.</p>
+</section>
+<section id="a.1" class="level5">
+<h5 class="anchored" data-anchor-id="a.1">2.6.A.1</h5>
+<p>Use truth tables to show that the following statements are logically equivalent.</p>
+<pre><code>| P   | Q   | R   | $P \land (Q \lor R)$  | $(P \land Q) \lor (P \land R)$ |
+|-----|-----|-----|-----|-----|
+| T   | T   | T   | T   | T **T** T   |
+| T   | T   | F   | T   | T **T** F   |
+| T   | F   | T   | T   | F **T** T   |
+| T   | F   | F   | F   | T **F** F   |
+| F   | T   | T   | F   | F **F** F   |
+| F   | T   | F   | F   | F **F** F   |
+| F   | F   | T   | F   | F **F** F   |
+| F   | F   | F   | F   | F **F** F   |</code></pre>
+</section>
+<section id="a.7" class="level5">
+<h5 class="anchored" data-anchor-id="a.7">2.6.A.7</h5>
+<pre><code>| P     | Q     | $P \rightarrow Q$ | $(P \land \neg Q) \rightarrow (Q \land \neg Q)$ |
+|-------|-------|-------|-------|
+| T     | T     | T     | T     |
+| T     | F     | F     | F     |
+| F     | T     | T     | T     |
+| F     | F     | T     | T     |</code></pre>
+</section>
+<section id="b.10" class="level5">
+<h5 class="anchored" data-anchor-id="b.10">2.6.B.10</h5>
+<p>LHS: <span class="math inline">\((P \rightarrow Q) \lor R = \neg P \lor Q \lor R\)</span> RHS: $((P Q) R) = (P Q) R = P Q R $.</p>
+</section>
+</section>
+</section>
+<section id="quantificational-logic" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="quantificational-logic"><span class="header-section-number">1.6</span> Quantificational Logic</h3>
+<section id="notes-1" class="level4">
+<h4 class="anchored" data-anchor-id="notes-1">Notes</h4>
+<p>P(x) can be true for some values of x and false for others i.e.&nbsp;x is a free variable. To be able to know how many of x that makes P(x) true, we use quantifiers. By then, x is a bound variable, by the quantifiers.</p>
+<ul>
+<li><p><span class="math inline">\(\forall x P(x)\)</span> means “For all x, P(x).”</p></li>
+<li><p><span class="math inline">\(\exists x P(x)\)</span> means “There exists an x such that P(x).”</p></li>
+</ul>
+</section>
+<section id="section-37" class="level4">
+<h4 class="anchored" data-anchor-id="section-37">1.</h4>
+<p>Analyze the logical forms of the following statements. (a) Anyone who has forgiven at least one person is a saint.</p>
+<p>If a person has forgiven at least one person, he is a saint. <span class="math inline">\(\forall\)</span> persons (If he has forgiven at least one person, he is a saint). Says F(x, y) is x has forgiven y, and S(x) is x is a saint. <span class="math inline">\(\forall x(\exists y F(x,y) \rightarrow S(x))\)</span>.</p>
+<ol start="2" type="a">
+<li>Nobody in the calculus class is smarter than everybody in the discrete math class.</li>
+</ol>
+<p>There not exists a person in the calculus class who is smarter than everybody in the discrete math class. Says a person in the cal class is C(x), x is smarter than everybody in the discrete math class is <span class="math inline">\(\forall y C(x, y)\)</span>. So <span class="math inline">\(\nexists x [C(x) \land \forall y C(x, y)]\)</span>.</p>
+<p>I solved this incorrectly. The correct answer is - x is smarter than everybody in the discrete math class means - If y in the discrete math, then x is smarther than y. Let D(y) be y in the discrete math. Hence, <span class="math inline">\(\nexists x [C(x) \land \forall y (D(y) \rightarrow C(x, y))]\)</span>.</p>
+<ol start="3" type="a">
+<li>Everyone likes Mary, except Mary herself.</li>
+</ol>
+<p>For all person, if he is not Mary, he likes Mary. Let B(x) be a person is Mary, and L(x) be he likes Mary. So, <span class="math inline">\(\forall x (\neg B(x) \rightarrow L(x))\)</span>.</p>
+<ol start="4" type="a">
+<li>Jane saw a police officer, and Roger saw one too.</li>
+</ol>
+<p>There exists a police officer whom Jane saw, and there exists a police office whom Roger saw. Let S(j, x) stands for Jane saw a police and S(r, y) stands for Roger saw a police. Then, <span class="math inline">\(\exists x  (P(x) \land S(j, x)) \land \exists y (P(y) \land S(r, y))\)</span>.</p>
+<ol start="5" type="a">
+<li>Jane saw a police officer, and Roger saw him too.</li>
+</ol>
+<p>There exists a police officer whom Jane and Roger saw. $x (P(x) S(j,x) S(r, x)). $</p>
+</section>
+<section id="section-38" class="level4">
+<h4 class="anchored" data-anchor-id="section-38">3.</h4>
+<p>Analyze the logical forms of the following statements. The universe of discourse is R. What are the free variables in each statement?</p>
+<ol type="a">
+<li>Every number that is larger than x is larger than y.</li>
+</ol>
+<p><span class="math inline">\(\forall a ((a&gt;x) \rightarrow (a&gt;y))\)</span>. Free variables are x and y.</p>
+<ol start="2" type="a">
+<li>For every number a, the equation <span class="math inline">\(ax^2 + 4x − 2 = 0\)</span> has at least one solution iff <span class="math inline">\(a ≥ −2\)</span>.</li>
+</ol>
+<p><span class="math inline">\(\forall a \geq -2 (\exists x (ax^2 + 4x − 2 = 0))\)</span>. There’s no free variable.</p>
+<ol start="3" type="a">
+<li>All solutions of the inequality <span class="math inline">\(x^3 − 3x &lt; 3\)</span> are smaller than 10.</li>
+</ol>
+<p><span class="math inline">\(\forall x &lt; 10 (x^3 − 3x &lt; 3)\)</span>. No free variable.</p>
+<ol start="4" type="a">
+<li>If there is a number x such that <span class="math inline">\(x^2 + 5x = w\)</span> and there is a number y such that <span class="math inline">\(4 − y^2 = w\)</span>, then w is strictly between −10 and 10.</li>
+</ol>
+<p><span class="math inline">\((\exists x (x^2 + 5x = w) \land \exists x (4 − y^2 = w)) \rightarrow \forall w(-10 \leq w \leq 10.)\)</span></p>
+</section>
+<section id="ex-the-book-of-proof-1" class="level4">
+<h4 class="anchored" data-anchor-id="ex-the-book-of-proof-1">Ex The book of proof</h4>
+<section id="section-39" class="level5">
+<h5 class="anchored" data-anchor-id="section-39">2.7</h5>
+<p>Write the following as English sentences. Say whether they are true or false.</p>
+<ol type="1">
+<li><p><span class="math inline">\(\forall x \in \mathbb{R}, x^2 &gt; 0\)</span> For every real number x, <span class="math inline">\(x^2 &gt; 0\)</span>. This is true.</p></li>
+<li><p><span class="math inline">\(\exists a \in \mathbb{R}, \forall x \in \mathbb{R}, ax = x\)</span> There exists a real number a such that ax = x for all real number x. This is true. a = 1.</p></li>
+<li><p><span class="math inline">\(\exists n \in \mathbb{N}, \forall X \in \mathcal{P} (\mathbb{N}), |X| &lt; n\)</span> There exists a natrual number n such that n is greater than the number of elements of every sets of natural number. This is true.</p></li>
+<li><p><span class="math inline">\(\forall n \in \mathbb{Z}, \exists m \in \mathbb{Z}, m = n + 5\)</span> For all integer n, there’s a coresponding integer m such that n = m -5. This is true.</p></li>
+</ol>
+</section>
+<section id="section-40" class="level5">
+<h5 class="anchored" data-anchor-id="section-40">2.9</h5>
+<p>Translate each of the following sentences into symbolic logic.</p>
+<ol start="4" type="1">
+<li><p>For every prime number p, there is another prime number q with q &gt; p. <span class="math inline">\(\forall p \in \mathbb{P}(p), \exists q \in \mathbb{P}(q), q &gt; p\)</span></p></li>
+<li><p>There exists a real number a for which a + x = x for every real number x. <span class="math inline">\(\exists a \in  \mathbb{R}, \forall x \in \mathbb{R}, a + x = x\)</span></p></li>
+<li><p>Everything is funny as long as it is happening to somebody else.</p></li>
+</ol>
+<p>For all things, if and only if it happens to somebody else, it is funny. Let F(x) be a thing is funny; H(x, y) a thing happens to a person y. <span class="math inline">\(\forall x (\exists y, \neg(y = myself) \land H(x,y) \leftrightarrow F(x))\)</span></p>
+</section>
 </section>
 </section>
 </section>
