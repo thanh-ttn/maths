@@ -908,12 +908,13 @@ This is a converse of statement (a).
 
 ##### 2.5.2
 
-    | Q     | R     | $Q \lor R$ | $R \land Q$| $(Q \lor R) \rightarrow (R \land Q)$ |
-    |-------|-------|-------|-------|-------|
-    | T     | T     | T     | T     | T     |
-    | T     | F     | T     | F     | F     |
-    | F     | T     | T     | F     | F     |
-    | F     | F     | F     | F     | T     |
+
+| Q  | R  | $Q \lor R$  | $R \land Q$  | $(Q \lor R) \rightarrow (R \land Q)$  |
+|-------|-------|-------|-------|-------|
+| T     | T     | T     | T     | T     |
+| T     | F     | T     | F     | F     |
+| F     | T     | T     | F     | F     |
+| F     | F     | F     | F     | T     |
 
 ##### 2.5.10
 
@@ -925,28 +926,33 @@ If $((P \land Q) \lor R)$ is true and R is false, $(P \land Q)$ is true, then P 
 ##### 2.6.A.1
 Use truth tables to show that the following statements are logically equivalent. 
 
-    | P   | Q   | R   | $P \land (Q \lor R)$  | $(P \land Q) \lor (P \land R)$ |
-    |-----|-----|-----|-----|-----|
-    | T   | T   | T   | T   | T **T** T   |
-    | T   | T   | F   | T   | T **T** F   |
-    | T   | F   | T   | T   | F **T** T   |
-    | T   | F   | F   | F   | T **F** F   |
-    | F   | T   | T   | F   | F **F** F   |
-    | F   | T   | F   | F   | F **F** F   |
-    | F   | F   | T   | F   | F **F** F   |
-    | F   | F   | F   | F   | F **F** F   |
+| P   | Q   | R   | $P \land (Q \lor R)$  | $(P \land Q) \lor (P \land R)$ |
+|-------|-------|-------|-------|-------|
+| T   | T   | T   | T   | T **T** T   |
+| T   | T   | F   | T   | T **T** F   |
+| T   | F   | T   | T   | F **T** T   |
+| T   | F   | F   | F   | T **F** F   |
+| F   | T   | T   | F   | F **F** F   |
+| F   | T   | F   | F   | F **F** F   |
+| F   | F   | T   | F   | F **F** F   |
+| F   | F   | F   | F   | F **F** F   |
 
 ##### 2.6.A.7
-    | P     | Q     | $P \rightarrow Q$ | $(P \land \neg Q) \rightarrow (Q \land \neg Q)$ |
-    |-------|-------|-------|-------|
-    | T     | T     | T     | T     |
-    | T     | F     | F     | F     |
-    | F     | T     | T     | T     |
-    | F     | F     | T     | T     |
+
+| P     | Q     | $P \rightarrow Q$ | $(P \land \neg Q) \rightarrow (Q \land \neg Q)$ |
+|-------|-------|-------|-------|
+| T     | T     | T     | T     |
+| T     | F     | F     | F     |
+| F     | T     | T     | T     |
+| F     | F     | T     | T     |
 
 ##### 2.6.B.10
-LHS: $(P \rightarrow Q) \lor R = \neg P \lor Q \lor R$
-RHS: $\neg((P \land \neg Q) \land \neg R) = \neg(P \land \neg Q) \lor R = \neg P \lor Q \lor R $.
+LHS: 
+$(P \rightarrow Q) \lor R = \neg P \lor Q \lor R$
+
+RHS: 
+$\neg((P \land \neg Q) \land \neg R)$
+$= \neg(P \land \neg Q) \lor R = \neg P \lor Q \lor R$.
 
 ### Quantificational Logic
 

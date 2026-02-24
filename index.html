@@ -1837,12 +1837,54 @@ P \\
 <h4 class="anchored" data-anchor-id="ex-the-book-of-proof">Ex The book of proof</h4>
 <section id="section-35" class="level5">
 <h5 class="anchored" data-anchor-id="section-35">2.5.2</h5>
-<pre><code>| Q     | R     | $Q \lor R$ | $R \land Q$| $(Q \lor R) \rightarrow (R \land Q)$ |
-|-------|-------|-------|-------|-------|
-| T     | T     | T     | T     | T     |
-| T     | F     | T     | F     | F     |
-| F     | T     | T     | F     | F     |
-| F     | F     | F     | F     | T     |</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Q</th>
+<th>R</th>
+<th><span class="math inline">\(Q \lor R\)</span></th>
+<th><span class="math inline">\(R \land Q\)</span></th>
+<th><span class="math inline">\((Q \lor R) \rightarrow (R \land Q)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="section-36" class="level5">
 <h5 class="anchored" data-anchor-id="section-36">2.5.10</h5>
@@ -1851,29 +1893,132 @@ P \\
 <section id="a.1" class="level5">
 <h5 class="anchored" data-anchor-id="a.1">2.6.A.1</h5>
 <p>Use truth tables to show that the following statements are logically equivalent.</p>
-<pre><code>| P   | Q   | R   | $P \land (Q \lor R)$  | $(P \land Q) \lor (P \land R)$ |
-|-----|-----|-----|-----|-----|
-| T   | T   | T   | T   | T **T** T   |
-| T   | T   | F   | T   | T **T** F   |
-| T   | F   | T   | T   | F **T** T   |
-| T   | F   | F   | F   | T **F** F   |
-| F   | T   | T   | F   | F **F** F   |
-| F   | T   | F   | F   | F **F** F   |
-| F   | F   | T   | F   | F **F** F   |
-| F   | F   | F   | F   | F **F** F   |</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th>R</th>
+<th><span class="math inline">\(P \land (Q \lor R)\)</span></th>
+<th><span class="math inline">\((P \land Q) \lor (P \land R)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T <strong>T</strong> T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T <strong>T</strong> F</td>
+</tr>
+<tr class="odd">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F <strong>T</strong> T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T <strong>F</strong> F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F <strong>F</strong> F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F <strong>F</strong> F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>F <strong>F</strong> F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F <strong>F</strong> F</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="a.7" class="level5">
 <h5 class="anchored" data-anchor-id="a.7">2.6.A.7</h5>
-<pre><code>| P     | Q     | $P \rightarrow Q$ | $(P \land \neg Q) \rightarrow (Q \land \neg Q)$ |
-|-------|-------|-------|-------|
-| T     | T     | T     | T     |
-| T     | F     | F     | F     |
-| F     | T     | T     | T     |
-| F     | F     | T     | T     |</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>P</th>
+<th>Q</th>
+<th><span class="math inline">\(P \rightarrow Q\)</span></th>
+<th><span class="math inline">\((P \land \neg Q) \rightarrow (Q \land \neg Q)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="b.10" class="level5">
 <h5 class="anchored" data-anchor-id="b.10">2.6.B.10</h5>
-<p>LHS: <span class="math inline">\((P \rightarrow Q) \lor R = \neg P \lor Q \lor R\)</span> RHS: $((P Q) R) = (P Q) R = P Q R $.</p>
+<p>LHS: <span class="math inline">\((P \rightarrow Q) \lor R = \neg P \lor Q \lor R\)</span></p>
+<p>RHS: <span class="math inline">\(\neg((P \land \neg Q) \land \neg R)\)</span> <span class="math inline">\(= \neg(P \land \neg Q) \lor R = \neg P \lor Q \lor R\)</span>.</p>
 </section>
 </section>
 </section>
